@@ -1046,19 +1046,38 @@ input[type="checkbox"]#contactopen:checked ~ div {
     padding-left: 20%; }
   #topmenu {
     width: 100%;
-    padding: 20px 0; }
+    padding: 20px 0;
+    position: absolute; }
     #topmenu h1 {
       padding-left: 5%; }
     #topmenu.small ul#nav, #topmenu.mobile ul#nav {
-      margin-top: 100px; }
+      margin-top: 100px;
+      left: -25px; }
+      #topmenu.small ul#nav a, #topmenu.mobile ul#nav a {
+        /* padding: 20px; */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 0; }
     #topmenu ul#nav {
+      position: fixed;
       float: left;
       margin-top: 158px; }
       #topmenu ul#nav li {
         display: block;
-        padding: 9px 4%;
-        margin: 10px;
-        background-color: #0b0b0c; }
+        /* padding: 9px 4%; */
+        margin: 2px;
+        background-color: #0b0b0c;
+        width: 125px;
+        height: 50px;
+        position: relative; }
+        #topmenu ul#nav li b {
+          float: right;
+          margin-top: 10px;
+          margin-right: 10px; }
+    #topmenu #soc-med {
+      position: fixed;
+      top: 0; }
   #slide-1 .bcg {
     background-size: 1040px 585px; }
   #skills .width-per-48 {
