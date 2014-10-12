@@ -370,7 +370,7 @@ input[type="radio"]:checked + div {
       .skillchart .bars.nth5 .filler {
         background-color: #418141; }
 
-#topmenu.small {
+#topmenu.small, #topmenu.mobile {
   padding-bottom: 0;
   top: 0;
   height: 62px;
@@ -378,9 +378,9 @@ input[type="radio"]:checked + div {
   -o-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
-  #topmenu.small h1 {
+  #topmenu.small h1, #topmenu.mobile h1 {
     margin-top: -20px; }
-  #topmenu.small ul#nav {
+  #topmenu.small ul#nav, #topmenu.mobile ul#nav {
     margin-top: 62px; }
 
 #topmenu {
@@ -602,10 +602,7 @@ a {
   margin: 0; }
 
 .bar {
-  /*height: 100%;*/
-  padding: 0 10%;
-  /*border-top: 5px solid #141728;
-    border-bottom: 5px solid #141728;*/ }
+  padding: 0 10%; }
 
 .seperator {
   height: 20px;
@@ -1044,12 +1041,15 @@ input[type="checkbox"]#contactopen:checked ~ div {
     left: -20%; } }
 
 @media screen and (max-width: 1065px) {
+  .bar {
+    padding: 0 10%;
+    padding-left: 20%; }
   #topmenu {
     width: 100%;
     padding: 20px 0; }
     #topmenu h1 {
       padding-left: 5%; }
-    #topmenu.small ul#nav {
+    #topmenu.small ul#nav, #topmenu.mobile ul#nav {
       margin-top: 100px; }
     #topmenu ul#nav {
       float: left;
@@ -1071,9 +1071,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
   #topmenu h1 {
     margin-top: 10px; }
   #topmenu.small h1 {
-    margin-top: -50px; }
-  #topmenu ul#nav li {
-    margin: 0 5px !important; } }
+    margin-top: -50px; } }
 
 @media screen and (max-width: 680px) {
   .colmarg {
@@ -1105,11 +1103,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
   #about .traits-list {
     margin-left: -10%; }
   #topmenu ul#nav {
-    position: fixed;
-    right: 5%;
-    width: 90%; }
-    #topmenu ul#nav li {
-      margin: 0 !important; } }
+    position: fixed; } }
 
 @media screen and (max-width: 420px) {
   #returntotop {
