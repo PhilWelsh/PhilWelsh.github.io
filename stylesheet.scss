@@ -562,7 +562,7 @@ input[type="radio"]:checked + div {
 
 //WEBSITE START
 
-#topmenu.small, #topmenu.mobile {
+#topmenu.mobile {
     padding-bottom: 0;
     top: 0;
     height: 62px;
@@ -581,12 +581,10 @@ input[type="radio"]:checked + div {
     background: url(img/borderrocks2.png);
     background-size: 100% 100%;
     background-color: #EBEBEB;
-    margin: 0;
-    padding: 20px 10%;
     position: fixed;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     height: 100px;
     z-index: 9;
     @include transition($fast);
@@ -630,7 +628,8 @@ input[type="radio"]:checked + div {
         position: absolute;
         color: #d4d4d4;
         font-family: project_xregular;
-        margin-top: 38px;
+        margin-top: -10px;
+        margin-left: 10%;
         float: left;
         @include transition($fast);
         font-size: 4rem;
@@ -657,13 +656,13 @@ input[type="radio"]:checked + div {
 
     ul#nav {
         @include transition($fast);
-        margin-top: 122px;
-        margin-right: 75px;
+        margin-top: 102px;
         background-color: transparent;
         z-index: 9;
-
+        margin-right: 200px;
 
         li {
+            position: relative;
             font-size: 1.2rem;
             padding: 0 5px;
             color: #B5AB94;
@@ -673,6 +672,13 @@ input[type="radio"]:checked + div {
                 text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
             }
 
+            a {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
             &:hover {
                 background-color: #f66a06;
                 color: rgb(51, 55, 69);
@@ -680,6 +686,10 @@ input[type="radio"]:checked + div {
                 b {
                     text-shadow: none;
                 }
+            }
+
+            &#nav-toggle {
+                display: none;
             }
         }
     }
@@ -698,7 +708,7 @@ input[type="radio"]:checked + div {
         width: 70px;
         height: 330px;
         right: 5%;
-        bottom: -360px;
+        top: 0;
         overflow: hidden;
         @include transition($fast);
         font-weight: bold;
@@ -871,7 +881,7 @@ a {
 
 #title {
     height: 500px;
-    margin-top: 160px;
+    margin-top: 130px;
     font-family: ptarmiganitalic;
     /*border-top: 5px solid #141728;
     border-bottom: 5px solid #141728;*/
@@ -1489,62 +1499,78 @@ input[type="checkbox"]#contactopen:checked ~ div {
 @media screen and (max-width: 1065px) {
     .bar {
         padding: 0 10%;
-        padding-left: 20%;
     }
 
     #topmenu {
-        width: 100%;
-        padding: 20px 0;
-        position: absolute;
-
-        h1 {
-            padding-left: 5%;
-        }
-
-
-        &.small ul#nav, &.mobile ul#nav {
-            margin-top: 100px;
-            left: -25px;
-
-            a {
-                /* padding: 20px; */
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                right: 0;
-            }
-        }
+        position: relative;
+        top: 50px;
 
         ul#nav {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 0;
             position: fixed;
-            float: left;
-            margin-top: 158px;
 
             li {
-                display: block;
-                /* padding: 9px 4%; */
-                margin: 2px;
-                background-color: #0b0b0c;
-                width: 125px;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                width: 100px;
+                height: 100px;
+                border: 1px solid transparent;
+                font-size: 1.2rem;
+                padding: 0;
+                width: 25%;
                 height: 50px;
-                position: relative;
+                float: left;
+                border-right: 1px solid black;
+                background-color: black;
 
-                b {
-                    float: right;
-                    margin-top: 10px;
-                    margin-right: 10px;
+                a {
+                    position: absolute;
+                    line-height: 45px;
                 }
             }
         }
+    }
 
-        #soc-med {
-            position: fixed;
-            top: 0;
+    #title {
+        margin-top: 50px;
+        height: 250px;
+
+
+        .overflow-hide {
+            height: 250px;
+        }
+
+        #profilepic4 {
+            background-size: 200px;
+            width: 335px;
+        }
+    }
+
+
+    .text {
+        padding: 75px 0;
+    }
+
+    #about {
+        #stripe {
+            height: 410px;
+        }
+
+        hr {
+            top: 400px;
+        }
+
+        .desc {
+            margin: 75px 0;
         }
     }
 
     #slide-1 .bcg {
         background-size: 1040px 585px;
+        background-position: 0!important;
     }
 
     #skills {
@@ -1553,21 +1579,95 @@ input[type="checkbox"]#contactopen:checked ~ div {
             float: none;
         }
 
+        .skillbox {
+            margin: 50px 0;
+        }
+
         .skillbox2 {
+            margin: 50px 0;
             margin-top: 0;
+        }
+    }
+
+    input[type="checkbox"]#contactopen:checked ~ div {
+        height: 670px !important;
+    }
+
+    #contact {
+        .width-250 {
+            width: 100%;
+            margin: auto;
+        }
+
+        .where {
+            left: 10%;
+            position: initial;
         }
     }
 }
 
 @media screen and (max-width: 840px) {
     #topmenu {
-        h1 {
-            margin-top: 10px;
 
-            b {
+        #topmenu {
+            width: 100%;
+            padding: 20px 0;
+            position: absolute;
+
+            h1 {
+                padding-left: 5%;
+            }
+
+
+            &.small ul#nav, &.mobile ul#nav {
+                margin-top: 100px;
+                left: -25px;
+
+                a {
+                    /* padding: 20px; */
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    right: 0;
+                }
+            }
+
+            ul#nav {
+                position: fixed;
+                float: left;
+                margin-top: 158px;
+
+                a {
+                    border-right: 25px solid rgb(214, 152, 152);
+                }
+
+                li {
+                    display: block;
+                    /* padding: 9px 4%; */
+                    margin: 2px;
+                    background-color: #0b0b0c;
+                    width: 125px;
+                    height: 50px;
+                    position: relative;
+                    right: 80px;
+
+                    &#nav-toggle {
+                        right: 0;
+                    }
+
+                    b {
+                        float: right;
+                        margin-top: 10px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            #soc-med {
+                position: fixed;
+                top: 0;
             }
         }
-
 
 
         &.small h1 {
@@ -1595,27 +1695,13 @@ input[type="checkbox"]#contactopen:checked ~ div {
         }
     }
 
-    input[type="checkbox"]#contactopen:checked ~ div {
-        height: 650px !important;
-    }
+
 
     #about .traits-list {
         width: 470px;
 
         #stats {
             padding: 20px 5%;
-        }
-    }
-
-    #contact {
-        .width-250 {
-            width: 100%;
-            margin: auto;
-        }
-
-        .where {
-            left: 10%;
-            position: initial;
         }
     }
 }

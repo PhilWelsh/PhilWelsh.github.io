@@ -10,10 +10,7 @@
                 //console.log(data.curTop);
             }
         });
-    }
-    else {
-        $("#topmenu").addClass("mobile");
-    }
+    };
     //    // Detect if the browser is IE or not.
     //    // If it is not IE, we assume that the browser is NS.
     //    var IE = document.all ? true : false

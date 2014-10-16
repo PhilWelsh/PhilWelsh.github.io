@@ -370,7 +370,7 @@ input[type="radio"]:checked + div {
       .skillchart .bars.nth5 .filler {
         background-color: #418141; }
 
-#topmenu.small, #topmenu.mobile {
+#topmenu.mobile {
   padding-bottom: 0;
   top: 0;
   height: 62px;
@@ -378,21 +378,19 @@ input[type="radio"]:checked + div {
   -o-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
-  #topmenu.small h1, #topmenu.mobile h1 {
+  #topmenu.mobile h1 {
     margin-top: -20px; }
-  #topmenu.small ul#nav, #topmenu.mobile ul#nav {
+  #topmenu.mobile ul#nav {
     margin-top: 62px; }
 
 #topmenu {
   background: url(img/borderrocks2.png);
   background-size: 100% 100%;
   background-color: #EBEBEB;
-  margin: 0;
-  padding: 20px 10%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 100%;
   height: 100px;
   z-index: 9;
   -moz-transition: all 0.5s ease-in-out;
@@ -430,7 +428,8 @@ input[type="radio"]:checked + div {
     position: absolute;
     color: #d4d4d4;
     font-family: project_xregular;
-    margin-top: 38px;
+    margin-top: -10px;
+    margin-left: 10%;
     float: left;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -460,11 +459,12 @@ input[type="radio"]:checked + div {
     -o-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    margin-top: 122px;
-    margin-right: 75px;
+    margin-top: 102px;
     background-color: transparent;
-    z-index: 9; }
+    z-index: 9;
+    margin-right: 200px; }
     #topmenu ul#nav li {
+      position: relative;
       font-size: 1.2rem;
       padding: 0 5px;
       color: #B5AB94;
@@ -474,11 +474,18 @@ input[type="radio"]:checked + div {
       transition: all 0.25s ease-in-out; }
       #topmenu ul#nav li b {
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+      #topmenu ul#nav li a {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
       #topmenu ul#nav li:hover {
         background-color: #f66a06;
         color: #333745; }
         #topmenu ul#nav li:hover b {
           text-shadow: none; }
+      #topmenu ul#nav li#nav-toggle {
+        display: none; }
   #topmenu input[type="checkbox"]#soc-med-open:checked ~ ul {
     bottom: 15px; }
     #topmenu input[type="checkbox"]#soc-med-open:checked ~ ul #soc-open {
@@ -489,7 +496,7 @@ input[type="radio"]:checked + div {
     width: 70px;
     height: 330px;
     right: 5%;
-    bottom: -360px;
+    top: 0;
     overflow: hidden;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -614,7 +621,7 @@ a {
 
 #title {
   height: 500px;
-  margin-top: 160px;
+  margin-top: 130px;
   font-family: ptarmiganitalic;
   /*border-top: 5px solid #141728;
     border-bottom: 5px solid #141728;*/
@@ -1042,53 +1049,108 @@ input[type="checkbox"]#contactopen:checked ~ div {
 
 @media screen and (max-width: 1065px) {
   .bar {
-    padding: 0 10%;
-    padding-left: 20%; }
+    padding: 0 10%; }
   #topmenu {
+    position: relative;
+    top: 50px; }
+    #topmenu ul#nav {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0;
+      position: fixed; }
+      #topmenu ul#nav li {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        width: 100px;
+        height: 100px;
+        border: 1px solid transparent;
+        font-size: 1.2rem;
+        padding: 0;
+        width: 25%;
+        height: 50px;
+        float: left;
+        border-right: 1px solid black;
+        background-color: black; }
+        #topmenu ul#nav li a {
+          position: absolute;
+          line-height: 45px; }
+  #title {
+    margin-top: 50px;
+    height: 250px; }
+    #title .overflow-hide {
+      height: 250px; }
+    #title #profilepic4 {
+      background-size: 200px;
+      width: 335px; }
+  .text {
+    padding: 75px 0; }
+  #about #stripe {
+    height: 410px; }
+  #about hr {
+    top: 400px; }
+  #about .desc {
+    margin: 75px 0; }
+  #slide-1 .bcg {
+    background-size: 1040px 585px;
+    background-position: 0 !important; }
+  #skills .width-per-48 {
+    width: 80%;
+    float: none; }
+  #skills .skillbox {
+    margin: 50px 0; }
+  #skills .skillbox2 {
+    margin: 50px 0;
+    margin-top: 0; }
+  input[type="checkbox"]#contactopen:checked ~ div {
+    height: 670px !important; }
+  #contact .width-250 {
+    width: 100%;
+    margin: auto; }
+  #contact .where {
+    left: 10%;
+    position: initial; } }
+
+@media screen and (max-width: 840px) {
+  #topmenu #topmenu {
     width: 100%;
     padding: 20px 0;
     position: absolute; }
-    #topmenu h1 {
+    #topmenu #topmenu h1 {
       padding-left: 5%; }
-    #topmenu.small ul#nav, #topmenu.mobile ul#nav {
+    #topmenu #topmenu.small ul#nav, #topmenu #topmenu.mobile ul#nav {
       margin-top: 100px;
       left: -25px; }
-      #topmenu.small ul#nav a, #topmenu.mobile ul#nav a {
+      #topmenu #topmenu.small ul#nav a, #topmenu #topmenu.mobile ul#nav a {
         /* padding: 20px; */
         position: absolute;
         width: 100%;
         height: 100%;
         right: 0; }
-    #topmenu ul#nav {
+    #topmenu #topmenu ul#nav {
       position: fixed;
       float: left;
       margin-top: 158px; }
-      #topmenu ul#nav li {
+      #topmenu #topmenu ul#nav a {
+        border-right: 25px solid #d69898; }
+      #topmenu #topmenu ul#nav li {
         display: block;
         /* padding: 9px 4%; */
         margin: 2px;
         background-color: #0b0b0c;
         width: 125px;
         height: 50px;
-        position: relative; }
-        #topmenu ul#nav li b {
+        position: relative;
+        right: 80px; }
+        #topmenu #topmenu ul#nav li#nav-toggle {
+          right: 0; }
+        #topmenu #topmenu ul#nav li b {
           float: right;
           margin-top: 10px;
           margin-right: 10px; }
-    #topmenu #soc-med {
+    #topmenu #topmenu #soc-med {
       position: fixed;
       top: 0; }
-  #slide-1 .bcg {
-    background-size: 1040px 585px; }
-  #skills .width-per-48 {
-    width: 80%;
-    float: none; }
-  #skills .skillbox2 {
-    margin-top: 0; } }
-
-@media screen and (max-width: 840px) {
-  #topmenu h1 {
-    margin-top: 10px; }
   #topmenu.small h1 {
     margin-top: -50px; } }
 
@@ -1101,18 +1163,10 @@ input[type="checkbox"]#contactopen:checked ~ div {
     font-size: 1.4rem; }
   #name h2, #name h1, #name p {
     padding-left: 0 !important; }
-  input[type="checkbox"]#contactopen:checked ~ div {
-    height: 650px !important; }
   #about .traits-list {
     width: 470px; }
     #about .traits-list #stats {
-      padding: 20px 5%; }
-  #contact .width-250 {
-    width: 100%;
-    margin: auto; }
-  #contact .where {
-    left: 10%;
-    position: initial; } }
+      padding: 20px 5%; } }
 
 @media screen and (max-width: 540px) {
   #about #stripe, #about .desc {
