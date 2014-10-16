@@ -1064,7 +1064,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
         -webkit-box-sizing: border-box;
         width: 100px;
         height: 100px;
-        border: 1px solid transparent;
+        border: 1px solid gray;
         font-size: 1.2rem;
         padding: 0;
         width: 25%;
