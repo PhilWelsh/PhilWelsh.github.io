@@ -1,4 +1,5 @@
-﻿$(function () {
+﻿
+$(function () {
     //slick.js
     $('.single-item').slick();
 
@@ -24,21 +25,15 @@
 
     //SCROLL EFFECTS
     /* Every time the window is scrolled ... */
-    $(window).scroll(function () {
+    $(window).scroll(_.throttle(function () {
 
         //SCROLL TO TOP BOTTOM
-        //UNTHROTTLED - HEAVY JS
-        //if ($(document).scrollTop() > 100) {
-        //    $("#topmenu").addClass("small");
-        //} else {
-        //    $("#topmenu").removeClass("small");
-        //}
 
-        //if ($(this).scrollTop() > 100) {
-        //    $('#returntotop').fadeIn(700);
-        //} else {
-        //    $('#returntotop').fadeOut(700);
-        //}
+        if ($(this).scrollTop() > 100) {
+            $('#returntotop').fadeIn(700);
+        } else {
+            $('#returntotop').fadeOut(700);
+        }
 
         //APPEAR ON SCROLL
 
@@ -68,7 +63,7 @@
 
 
         });
-    });
+    }, 750));
 
     //Skill buttons
 
