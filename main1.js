@@ -4,16 +4,16 @@ $(function () {
     $('.single-item').slick();
 
     // Init Skrollr
-    //if (window.innerWidth > 1000) {
-    //    var s = skrollr.init({
-    //        render: function (data) {
-    //            //Debugging - Log the current scroll position.
-    //            //console.log(data.curTop);
-    //        }
-    //    });
-    //};
+    if (window.innerWidth > 1000) {
+        var s = skrollr.init({
+            render: function (data) {
+                //Debugging - Log the current scroll position.
+                //console.log(data.curTop);
+            }
+        });
+    };
     //SCROLL TO
-    $("#topmenu li a.navbutton").on("click", function () {
+    $("#topmenu li a").on("click", function () {
         var destination = $(this).attr('data-attr-scroll')
         $('body').scrollTo(destination, { duration: 'slow' });
     });
