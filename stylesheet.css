@@ -135,7 +135,7 @@ body {
 .hide {
   display: none; }
 
-input[type="radio"] {
+input {
   display: none; }
 
 input[type="radio"]:checked + div {
@@ -365,6 +365,9 @@ input[type="radio"]:checked + div {
     #topmenu input[type="checkbox"]#soc-med-open:checked ~ ul #soc-open {
       line-height: 25px;
       border-bottom: 5px solid orange; }
+  #topmenu input[type="checkbox"]#menu-open {
+    position: fixed;
+    top: 50px; }
   #topmenu input[type="checkbox"]#menu-open:checked ~ ul {
     top: 0; }
     #topmenu input[type="checkbox"]#menu-open:checked ~ ul #menu {
@@ -422,6 +425,18 @@ a {
   background: url(img/newcastle2blur.jpg);
   background-size: cover; }
 
+@-moz-keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+
 #title {
   height: 500px;
   overflow: hidden;
@@ -433,14 +448,23 @@ a {
     top: 0;
     left: 0;
     position: absolute; }
-  #title #bg {
-    width: 120%;
-    height: auto;
-    min-height: 1024px;
-    background: url(img/lightgrid.jpg) repeat;
-    -webkit-filter: blur(3px);
-    background-size: cover;
-    background-color: #eeeeee; }
+  #title #svgcontent {
+    position: absolute;
+    left: 0;
+    bottom: -45px;
+    width: 400px;
+    height: 400px; }
+    #title #svgcontent g path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      -moz-animation: dash 9s linear forwards;
+      -o-animation: dash 9s linear forwards;
+      -webkit-animation: dash 9s linear forwards;
+      animation: dash 9s linear forwards;
+      -moz-animation-delay: 2s;
+      -o-animation-delay: 2s;
+      -webkit-animation-delay: 2s;
+      animation-delay: 2s; }
   #title #name h1 {
     color: #e7e7e7;
     position: absolute;
@@ -888,6 +912,10 @@ h1 {
           line-height: 45px; }
   #title {
     height: 350px; }
+    #title #svgcontent {
+      width: 280px;
+      height: 280px;
+      left: 30px; }
     #title .overflow-hide {
       height: 350px; }
     #title #profilepic4 {
