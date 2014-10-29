@@ -7,40 +7,25 @@
 @font-face {
     font-family: 'arcade';
     src: url('fonts/arcade-webfont.eot');
-    src: url('fonts/arcade-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/arcade-webfont.woff2') format('woff2'),
-         url('fonts/arcade-webfont.woff') format('woff'),
-         url('fonts/arcade-webfont.ttf') format('truetype'),
-         url('fonts/arcade-webfont.svg#arcaderegular') format('svg');
+    src: url('fonts/arcade-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/arcade-webfont.woff2') format('woff2'), url('fonts/arcade-webfont.woff') format('woff'), url('fonts/arcade-webfont.ttf') format('truetype'), url('fonts/arcade-webfont.svg#arcaderegular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
     font-family: 'bebas';
     src: url('fonts/bebas-webfont.eot');
-    src: url('fonts/bebas-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/bebas-webfont.woff2') format('woff2'),
-         url('fonts/bebas-webfont.woff') format('woff'),
-         url('fonts/bebas-webfont.ttf') format('truetype'),
-         url('fonts/bebas-webfont.svg#bebasregular') format('svg');
+    src: url('fonts/bebas-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/bebas-webfont.woff2') format('woff2'), url('fonts/bebas-webfont.woff') format('woff'), url('fonts/bebas-webfont.ttf') format('truetype'), url('fonts/bebas-webfont.svg#bebasregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
     font-family: 'troika';
     src: url('fonts/troika-webfont.eot');
-    src: url('fonts/troika-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/troika-webfont.woff2') format('woff2'),
-         url('fonts/troika-webfont.woff') format('woff'),
-         url('fonts/troika-webfont.ttf') format('truetype'),
-         url('fonts/troika-webfont.svg#troikaregular') format('svg');
+    src: url('fonts/troika-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/troika-webfont.woff2') format('woff2'), url('fonts/troika-webfont.woff') format('woff'), url('fonts/troika-webfont.ttf') format('truetype'), url('fonts/troika-webfont.svg#troikaregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 
@@ -49,14 +34,9 @@
 @font-face {
     font-family: 'oswaldbold';
     src: url('fonts/oswaldbold-webfont.eot');
-    src: url('fonts/oswaldbold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/oswaldbold-webfont.woff2') format('woff2'),
-         url('fonts/oswaldbold-webfont.woff') format('woff'),
-         url('fonts/oswaldbold-webfont.ttf') format('truetype'),
-         url('fonts/oswaldbold-webfont.svg#oswaldbold') format('svg');
+    src: url('fonts/oswaldbold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/oswaldbold-webfont.woff2') format('woff2'), url('fonts/oswaldbold-webfont.woff') format('woff'), url('fonts/oswaldbold-webfont.ttf') format('truetype'), url('fonts/oswaldbold-webfont.svg#oswaldbold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 
@@ -65,14 +45,9 @@
 @font-face {
     font-family: 'aleobold';
     src: url('fonts/aleo-bold-webfont.eot');
-    src: url('fonts/aleo-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/aleo-bold-webfont.woff2') format('woff2'),
-         url('fonts/aleo-bold-webfont.woff') format('woff'),
-         url('fonts/aleo-bold-webfont.ttf') format('truetype'),
-         url('fonts/aleo-bold-webfont.svg#aleobold') format('svg');
+    src: url('fonts/aleo-bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/aleo-bold-webfont.woff2') format('woff2'), url('fonts/aleo-bold-webfont.woff') format('woff'), url('fonts/aleo-bold-webfont.ttf') format('truetype'), url('fonts/aleo-bold-webfont.svg#aleobold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 
@@ -81,14 +56,9 @@
 @font-face {
     font-family: 'kgbo';
     src: url('fonts/kgbokenvesselssketch-webfont.eot');
-    src: url('fonts/kgbokenvesselssketch-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/kgbokenvesselssketch-webfont.woff2') format('woff2'),
-         url('fonts/kgbokenvesselssketch-webfont.woff') format('woff'),
-         url('fonts/kgbokenvesselssketch-webfont.ttf') format('truetype'),
-         url('fonts/kgbokenvesselssketch-webfont.svg#kg_broken_vessels_sketchRg') format('svg');
+    src: url('fonts/kgbokenvesselssketch-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/kgbokenvesselssketch-webfont.woff2') format('woff2'), url('fonts/kgbokenvesselssketch-webfont.woff') format('woff'), url('fonts/kgbokenvesselssketch-webfont.ttf') format('truetype'), url('fonts/kgbokenvesselssketch-webfont.svg#kg_broken_vessels_sketchRg') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 
@@ -553,12 +523,9 @@ input[type="radio"]:checked + div {
             -o-transition-delay: .5s;
             -webkit-transition-delay: .5s;
             transition-delay: .5s;
-
-
-            &:hover {
+            /*&:hover {
                 bottom: 15px;
-            }
-
+            }*/
             &:after {
                 content: "";
                 height: 20px;
@@ -1279,6 +1246,8 @@ input[type="checkbox"]#contactopen:checked ~ div {
         margin: 0px;
         margin-top: 10px;
         padding: 1px;
+        padding-top: 7px;
+        margin-bottom: 5px;
     }
 
     a {
@@ -1288,6 +1257,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
         color: #252525;
         width: 350px;
         padding: 1px;
+        padding-top:5px;
         transition: $fast;
 
         &:hover {
@@ -1730,9 +1700,16 @@ h1 {
             margin-top: -25px;
         }
     }
-    #title #name{
-        h1{font-size:3rem;}
-        p{top:75px; font-size:1.5rem;}
+
+    #title #name {
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            top: 75px;
+            font-size: 1.5rem;
+        }
     }
 
     #skills .skillchart .bars > div .filler .percent {
@@ -1750,4 +1727,12 @@ h1 {
             width: 225px;
         }
     }
+}
+
+body.preload {
+    -webkit-transition: none !important;
+    transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
 }

@@ -324,9 +324,10 @@ input[type="radio"]:checked + div {
       -moz-transition-delay: 0.5s;
       -o-transition-delay: 0.5s;
       -webkit-transition-delay: 0.5s;
-      transition-delay: 0.5s; }
-      #topmenu #soc-med ul.soc-med:hover {
-        bottom: 15px; }
+      transition-delay: 0.5s;
+      /*&:hover {
+                bottom: 15px;
+            }*/ }
       #topmenu #soc-med ul.soc-med:after {
         content: "";
         height: 20px;
@@ -879,7 +880,9 @@ input[type="checkbox"]#contactopen:checked ~ div {
     width: 150px;
     margin: 0px;
     margin-top: 10px;
-    padding: 1px; }
+    padding: 1px;
+    padding-top: 7px;
+    margin-bottom: 5px; }
   #contact a {
     font-size: 1.2rem;
     text-decoration: none;
@@ -887,6 +890,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
     color: #252525;
     width: 350px;
     padding: 1px;
+    padding-top: 5px;
     transition: all 0.5s ease-in-out; }
     #contact a:hover {
       color: #a4a4a4;
@@ -1177,5 +1181,12 @@ h1 {
   #contact .where {
     height: 180px;
     width: 225px; } }
+
+body.preload {
+  -webkit-transition: none !important;
+  transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important; }
 
 /*# sourceMappingURL=stylesheet.css.map */
