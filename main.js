@@ -13,6 +13,10 @@ $(function () {
     //SCROLL TO
     $("#topmenu li a.navbutton").on("click", function () {
         var destination = $(this).attr('data-attr-scroll')
+        if (destination == "#contact") {
+            $('#contactopen').prop('checked', true);
+        }
+        else{}
         $('body').scrollTo(destination, { duration: 'slow' });
     });
     $("#returntotop").on("click", function () {

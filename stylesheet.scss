@@ -71,13 +71,13 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 @function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
 }
 
 @mixin font-size($size) {
-  font-size: $size; //Fallback in px
-  font-size: calculateRem($size);
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
 }
 
 
@@ -331,10 +331,8 @@ input[type="radio"]:checked + div {
 .skillchart {
     height: 229px;
     position: relative;
-    /*background: url(images/papergrid.jpg) repeat-x;*/
     border-left: 1px solid #d4d4d4;
     border-bottom: 1px solid #d4d4d4;
-    margin: 15px auto 50px;
 
     .bars {
         position: absolute;
@@ -395,7 +393,7 @@ input[type="radio"]:checked + div {
         }
 
         &.nth4 {
-            height: 40%;
+            height: 35%;
 
             .filler {
                 background-color: rgb(62, 71, 121);
@@ -413,7 +411,9 @@ input[type="radio"]:checked + div {
 }
 
 //WEBSITE START
-
+h2 {
+    @include font-size(40px);
+}
 
 #topmenu {
     background-color: rgb(61, 63, 101);
@@ -439,9 +439,9 @@ input[type="radio"]:checked + div {
             position: relative;
             color: $navlight;
             @include transition($faster);
-            box-sizing: border-box;
             -moz-box-sizing: border-box;
             -webkit-box-sizing: border-box;
+            box-sizing: border-box;
             border: 1px solid gray;
             @include font-size(22px);
             padding: 0;
@@ -457,7 +457,7 @@ input[type="radio"]:checked + div {
 
             a {
                 position: absolute;
-                line-height: 45px;
+                line-height: 52px;
                 top: 0;
                 left: 0;
                 width: 100%;
@@ -501,6 +501,7 @@ input[type="radio"]:checked + div {
                 left: 0;
                 width: 100%;
                 height: 100%;
+                cursor: pointer;
             }
         }
     }
@@ -684,11 +685,11 @@ input[type="radio"]:checked + div {
 }
 
 #banner {
-height: 70px;
-border-top: 2px solid rgba(175, 113, 0, 0.57);
-position: absolute;
-z-index: 1;
-width: 100%;
+    height: 70px;
+    border-top: 2px solid rgba(175, 113, 0, 0.57);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAECAYAAABGM/VAAAAAGklEQVQIW2NcvHjxfwY0wIhVMDIyElMlNkEAETIJ6RGEeBwAAAAASUVORK5CYII=);
 
     &:after {
@@ -710,16 +711,6 @@ a {
 
 .bar {
     padding: 0 10%;
-}
-
-.seperator {
-    height: 20px;
-    background-color: rgb(101, 91, 91);
-}
-
-#slide-1 .bcg {
-    background: url(img/newcastle2blur.jpg);
-    background-size: cover;
 }
 
 @-moz-keyframes dash {
@@ -918,17 +909,18 @@ a {
     }
 
     .col {
-        width: 46%;
+        width: calc(46% - 80px);
         margin: 2%;
-        padding: 0;
+        padding: 20px 40px;
         float: left;
     }
 
     .desc {
         background-color: white;
+        box-shadow: 0px 3px 6px 0px #DADADA, 0px 0px 5px 0px #A7A7A7;
     }
 
-    h1 {
+    h2 {
         color: #515151;
         @include font-size(40px);
         margin: 0;
@@ -970,7 +962,7 @@ a {
         @include font-size(16px);
         color: #000000;
 
-        h1 {
+        h2 {
             @include font-size(40px);
             margin-bottom: 0;
             margin-top: 10px;
@@ -1076,22 +1068,40 @@ a {
 }
 
 #experience {
-    //background: rgb(216, 173, 173);
-    /*background: url(img/line.jpg);
-    background-size: cover;*/
     font-family: kgbo;
-    background: #6f6d5e;
-    background: -moz-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6f6d5e), color-stop(52%,#acaca4), color-stop(100%,#6f6d5e));
-    background: -webkit-linear-gradient(-45deg, #6f6d5e 0%,#acaca4 52%,#6f6d5e 100%);
-    background: -o-linear-gradient(-45deg, #6f6d5e 0%,#acaca4 52%,#6f6d5e 100%);
-    background: -ms-linear-gradient(-45deg, #6f6d5e 0%,#acaca4 52%,#6f6d5e 100%);
-    background: linear-gradient(135deg, #6f6d5e 0%,#acaca4 52%,#6f6d5e 100%);
+    /*background: #3d3d3d;*/
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 );
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        /*top: -150%;*/
+        left: 0%;
+        z-index: -1;
+        width: 100%;
+        /*height: 380%;*/
+        height: 100%;
+        opacity: .9;
+        background: url(img/textbg.png), #111111;
+        background-size: contain;
+        /*-moz-transform: rotate(-35deg);
+        -o-transform: rotate(-35deg);
+        -ms-transform: rotate(-35deg);
+        -webkit-transform: rotate(-35deg);
+        transform: rotate(-35deg);
+        transform-origin: center;*/
+    }
 
     .text {
         max-width: 1000px;
         margin: auto;
+        padding-bottom: 1em;
+        padding-top: 3em;
+    }
+
+    .slick-slider {
+        margin-bottom: 0;
     }
 
     .slick-prev, .slick-next {
@@ -1100,7 +1110,6 @@ a {
 
         &:before {
             @include font-size(35px);
-            color: rgb(84, 81, 81);
         }
     }
 
@@ -1120,27 +1129,20 @@ a {
         z-index: 9;
     }
 
-    h1 {
+    h2 {
+        color: white;
         font-weight: normal;
-        text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, -1px 1px 0 #ccc6b1, 1px 1px 0 #ccc6b1;
+        margin-bottom: 0;
+        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     }
 
     p {
-        @include font-size(20px);
-        color: black;
-        /*background: url(img/line.jpg);*/
+        @include font-size(30px);
+        color: #ffffff;
+        background: rgba(0,0,0,0.6);
         padding: 20px;
-        border: 4px solid rgba(255, 255, 255, 0.58);
-        background: #6f6d5e;
-        background: -moz-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6f6d5e), color-stop(52%,#acaca4), color-stop(100%,#6f6d5e));
-        background: -webkit-linear-gradient(-45deg, #6f6d5e 0%,#acaca4 52%,#6f6d5e 100%);
-        background: -o-linear-gradient(-45deg, #6f6d5e 0%,#acaca4 52%,#6f6d5e 100%);
-        background: -ms-linear-gradient(-45deg, #6f6d5e 0%,#acaca4 52%,#6f6d5e 100%);
-        background: linear-gradient(135deg, #6f6d5e 0%,#acaca4 52%,#6f6d5e 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 );
-
-        &:before {
+        /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 );*/
+        /*&:before {
             content: "";
             position: absolute;
             width: 0;
@@ -1150,12 +1152,14 @@ a {
             border-color: #414554 transparent transparent transparent;
             top: 24px;
             left: 0;
-        }
+        }*/
     }
 }
 
 #skills {
-    background-color: #F5F5FB;
+background: repeating-linear-gradient( 45deg, #B6B6B6 0%, #B2B2B2 .05%, #D1D1D1 .1%);
+/* alt background: repeating-linear-gradient(45deg, #B6B6B6 0%, #B2B2B2 0.05%, #D9D9D9 0.1%, rgb(187, 187, 187) 50%);*/
+border-top: 1px solid gray;
     height: 100%;
     font-family: oswaldbold;
 
@@ -1171,19 +1175,33 @@ a {
     .skillbox {
         margin: 100px 0;
         margin-bottom: 0;
-        padding: 30px;
-        border-radius: 5px;
+        border-radius: 3px;
         color: #44396D;
+        padding: 20px;
+background: rgba(255, 255, 255, 0.37);
+/*border: 1px solid rgba(128, 128, 128, 0.32);*/
+box-shadow: 0px 1px 5px 0px rgba(73, 73, 73, 0.75), 0px 0px 0px 0px #A1A1A1;
 
-        h1 {
-            color: rgb(255, 255, 255);
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        h2 {
+            font-family: troika;
+            color: #515151;
+            text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+        }
+
+        h4 {
+            @include font-size(24px);
+            color: #44396D;
+            line-height: 1.2;
         }
     }
 
     .skillbox2 {
+        padding: 20px;
+        border-radius: 3px;
+background: rgba(255, 255, 255, 0.37);
+/*border: 1px solid rgba(128, 128, 128, 0.32);*/
+box-shadow: 0px 1px 5px 0px rgba(73, 73, 73, 0.75), 0px 0px 0px 0px #A1A1A1;
         margin: 100px 0;
-        padding: 0;
     }
 
     hr {
@@ -1240,7 +1258,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
         position: absolute;
         opacity: 1 !important;
 
-        h1 {
+        h3 {
             width: 270px;
         }
     }
@@ -1248,8 +1266,8 @@ input[type="checkbox"]#contactopen:checked ~ div {
 
 #portfolio {
     background-color: #3d3d3d;
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 
     .siteicon {
         display: inline-block;
@@ -1292,11 +1310,11 @@ input[type="checkbox"]#contactopen:checked ~ div {
         width: 250px;
     }
 
-    h2, p {
+    h3, p {
         margin: 5px;
     }
 
-    h2 {
+    h3 {
         background-color: black;
         color: #B8B8B8;
         @include font-size(22px);
@@ -1395,7 +1413,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
     }
 }
 
-h1 {
+h2 {
     font-family: troika !important;
 }
 
@@ -1491,11 +1509,6 @@ h1 {
                 float: left;
                 border-right: 1px solid black;
                 background-color: $navdark;
-
-                a {
-                    position: absolute;
-                    line-height: 45px;
-                }
             }
         }
     }
@@ -1522,9 +1535,8 @@ h1 {
         }
 
         .col {
-            width: 60%;
+            width: calc(65% - 80px);
             margin: 5%;
-            padding: 0;
             float: left;
 
             &.traits-list {
@@ -1564,14 +1576,16 @@ h1 {
 }
 
 @media screen and (max-width: 840px) {
-    &.small h1 {
-        margin-top: -50px;
-    }
 
     #about {
         .col {
-            width: 90%;
+            width: calc(90% - 80px);
+            padding: 10px 25px;
         }
+    }
+
+    #experience p {
+        @include font-size(24px);
     }
 
     #contact {
@@ -1593,14 +1607,6 @@ h1 {
         display: none;
     }
 
-    #topmenu {
-        h2 {
-            margin-left: 285px;
-            bottom: -17px;
-            @include font-size(25px);
-        }
-    }
-
     #name {
         h2, h1, p {
             padding-left: 0 !important;
@@ -1618,7 +1624,7 @@ h1 {
 
 @media screen and (max-width: 500px) {
 
-    body h1 {
+    body h2 {
         @include font-size(30px);
     }
 
@@ -1630,7 +1636,7 @@ h1 {
         position: fixed;
 
         li {
-            @include font-size(20px);
+            @include font-size(18px);
         }
     }
 
@@ -1648,6 +1654,11 @@ h1 {
     }
 
     #about {
+        .col {
+            width: calc(100% - 40px);
+            margin: 5% 0;
+        }
+
         .desc {
             h3 {
                 @include font-size(22px);
@@ -1674,13 +1685,20 @@ h1 {
         }
     }
 
+    #experience p {
+        @include font-size(16px);
+    }
+
     #skills {
+
+        &.bar{
+            padding:0;
+        }
         .width-per-48 {
             width: 100%;
         }
 
         .skillbox {
-            padding: 0;
             margin: 25px 0;
         }
 
@@ -1725,6 +1743,10 @@ h1 {
             height: 175px;
             width: 225px;
         }
+
+        a {
+            @include font-size(16px);
+        }
     }
 
     #footer {
@@ -1733,19 +1755,11 @@ h1 {
     }
 }
 
+
 @media screen and (max-width: 350px) {
-    #topmenu {
-        h1 {
-            margin-top: 35px;
-            @include font-size(50px);
-
-            b {
-                @include font-size(60px);
-            }
-        }
-
-        &.small h1 {
-            margin-top: -25px;
+    #topmenu ul#nav {
+        li {
+            @include font-size(14px);
         }
     }
 
@@ -1756,13 +1770,23 @@ h1 {
 
         p {
             top: 75px;
-            left:80px;
+            left: 80px;
             @include font-size(22px);
         }
     }
 
     #skills .skillchart .bars > div .filler .percent {
         @include font-size(15px);
+    }
+
+    #about .desc {
+        h3 {
+            @include font-size(20px);
+        }
+
+        p {
+            @include font-size(18px);
+        }
     }
 
 

@@ -167,10 +167,8 @@ input[type="radio"]:checked + div {
 .skillchart {
   height: 229px;
   position: relative;
-  /*background: url(images/papergrid.jpg) repeat-x;*/
   border-left: 1px solid #d4d4d4;
-  border-bottom: 1px solid #d4d4d4;
-  margin: 15px auto 50px; }
+  border-bottom: 1px solid #d4d4d4; }
   .skillchart .bars {
     position: absolute;
     bottom: 0;
@@ -212,13 +210,17 @@ input[type="radio"]:checked + div {
       .skillchart .bars.nth3 .filler {
         background-color: #744e74; }
     .skillchart .bars.nth4 {
-      height: 40%; }
+      height: 35%; }
       .skillchart .bars.nth4 .filler {
         background-color: #3e4779; }
     .skillchart .bars.nth5 {
       height: 15%; }
       .skillchart .bars.nth5 .filler {
         background-color: #418141; }
+
+h2 {
+  font-size: 40px;
+  font-size: 2.5rem; }
 
 #topmenu {
   background-color: #3d3f65;
@@ -251,9 +253,9 @@ input[type="radio"]:checked + div {
       -o-transition: all 0.25s ease-in-out;
       -webkit-transition: all 0.25s ease-in-out;
       transition: all 0.25s ease-in-out;
-      box-sizing: border-box;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      box-sizing: border-box;
       border: 1px solid gray;
       font-size: 22px;
       font-size: 1.375rem;
@@ -267,7 +269,7 @@ input[type="radio"]:checked + div {
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
       #topmenu ul#nav li a {
         position: absolute;
-        line-height: 45px;
+        line-height: 52px;
         top: 0;
         left: 0;
         width: 100%;
@@ -297,7 +299,8 @@ input[type="radio"]:checked + div {
         position: absolute;
         left: 0;
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        cursor: pointer; }
   #topmenu #soc-med {
     position: fixed;
     z-index: 9;
@@ -444,14 +447,6 @@ a {
 
 .bar {
   padding: 0 10%; }
-
-.seperator {
-  height: 20px;
-  background-color: #655b5b; }
-
-#slide-1 .bcg {
-  background: url(img/newcastle2blur.jpg);
-  background-size: cover; }
 
 @-moz-keyframes dash {
   to {
@@ -660,13 +655,14 @@ a {
     width: 50%;
     opacity: 0.4; }
   #about .col {
-    width: 46%;
+    width: calc(46% - 80px);
     margin: 2%;
-    padding: 0;
+    padding: 20px 40px;
     float: left; }
   #about .desc {
-    background-color: white; }
-  #about h1 {
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px #DADADA, 0px 0px 5px 0px #A7A7A7; }
+  #about h2 {
     color: #515151;
     font-size: 40px;
     font-size: 2.5rem;
@@ -702,7 +698,7 @@ a {
     font-size: 16px;
     font-size: 1rem;
     color: #000000; }
-    #about #stats h1 {
+    #about #stats h2 {
       font-size: 40px;
       font-size: 2.5rem;
       margin-bottom: 0;
@@ -777,27 +773,41 @@ a {
               width: 80%; }
 
 #experience {
-  /*background: url(img/line.jpg);
-    background-size: cover;*/
   font-family: kgbo;
-  background: #6f6d5e;
-  background: -moz-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #6f6d5e), color-stop(52%, #acaca4), color-stop(100%, #6f6d5e));
-  background: -webkit-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-  background: -o-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-  background: -ms-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-  background: linear-gradient(135deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 ); }
+  /*background: #3d3d3d;*/
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 );
+  position: relative; }
+  #experience:before {
+    content: '';
+    position: absolute;
+    /*top: -150%;*/
+    left: 0%;
+    z-index: -1;
+    width: 100%;
+    /*height: 380%;*/
+    height: 100%;
+    opacity: 0.9;
+    background: url(img/textbg.png), #111111;
+    background-size: contain;
+    /*-moz-transform: rotate(-35deg);
+        -o-transform: rotate(-35deg);
+        -ms-transform: rotate(-35deg);
+        -webkit-transform: rotate(-35deg);
+        transform: rotate(-35deg);
+        transform-origin: center;*/ }
   #experience .text {
     max-width: 1000px;
-    margin: auto; }
+    margin: auto;
+    padding-bottom: 1em;
+    padding-top: 3em; }
+  #experience .slick-slider {
+    margin-bottom: 0; }
   #experience .slick-prev, #experience .slick-next {
     width: 40px;
     height: 40px; }
     #experience .slick-prev:before, #experience .slick-next:before {
       font-size: 35px;
-      font-size: 2.1875rem;
-      color: #545151; }
+      font-size: 2.1875rem; }
   #experience .slick-prev {
     left: -50px; }
   #experience .slick-next {
@@ -808,37 +818,34 @@ a {
     left: 7px;
     color: white;
     z-index: 9; }
-  #experience h1 {
+  #experience h2 {
+    color: white;
     font-weight: normal;
-    text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, -1px 1px 0 #ccc6b1, 1px 1px 0 #ccc6b1; }
+    margin-bottom: 0;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; }
   #experience p {
-    font-size: 20px;
-    font-size: 1.25rem;
-    color: black;
-    /*background: url(img/line.jpg);*/
+    font-size: 30px;
+    font-size: 1.875rem;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.6);
     padding: 20px;
-    border: 4px solid rgba(255, 255, 255, 0.58);
-    background: #6f6d5e;
-    background: -moz-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #6f6d5e), color-stop(52%, #acaca4), color-stop(100%, #6f6d5e));
-    background: -webkit-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-    background: -o-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-    background: -ms-linear-gradient(-45deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-    background: linear-gradient(135deg, #6f6d5e 0%, #acaca4 52%, #6f6d5e 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 ); }
-    #experience p:before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 35px 35px 0 0;
-      border-color: #414554 transparent transparent transparent;
-      top: 24px;
-      left: 0; }
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 );*/
+    /*&:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 35px 35px 0 0;
+            border-color: #414554 transparent transparent transparent;
+            top: 24px;
+            left: 0;
+        }*/ }
 
 #skills {
-  background-color: #F5F5FB;
+  background: repeating-linear-gradient(45deg, #B6B6B6 0%, #B2B2B2 0.05%, #D1D1D1 0.1%);
+  /* alt background: repeating-linear-gradient(45deg, #B6B6B6 0%, #B2B2B2 0.05%, #D9D9D9 0.1%, rgb(187, 187, 187) 50%);*/
+  border-top: 1px solid gray;
   height: 100%;
   font-family: oswaldbold; }
   #skills > div {
@@ -849,15 +856,28 @@ a {
   #skills .skillbox {
     margin: 100px 0;
     margin-bottom: 0;
-    padding: 30px;
-    border-radius: 5px;
-    color: #44396D; }
-    #skills .skillbox h1 {
-      color: white;
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+    border-radius: 3px;
+    color: #44396D;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.37);
+    /*border: 1px solid rgba(128, 128, 128, 0.32);*/
+    box-shadow: 0px 1px 5px 0px rgba(73, 73, 73, 0.75), 0px 0px 0px 0px #A1A1A1; }
+    #skills .skillbox h2 {
+      font-family: troika;
+      color: #515151;
+      text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; }
+    #skills .skillbox h4 {
+      font-size: 24px;
+      font-size: 1.5rem;
+      color: #44396D;
+      line-height: 1.2; }
   #skills .skillbox2 {
-    margin: 100px 0;
-    padding: 0; }
+    padding: 20px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.37);
+    /*border: 1px solid rgba(128, 128, 128, 0.32);*/
+    box-shadow: 0px 1px 5px 0px rgba(73, 73, 73, 0.75), 0px 0px 0px 0px #A1A1A1;
+    margin: 100px 0; }
   #skills hr {
     height: 3px;
     background-color: black;
@@ -890,13 +910,13 @@ input[type="checkbox"]#contactopen:checked ~ div {
     right: 10%;
     position: absolute;
     opacity: 1 !important; }
-    input[type="checkbox"]#contactopen:checked ~ div .where h1 {
+    input[type="checkbox"]#contactopen:checked ~ div .where h3 {
       width: 270px; }
 
 #portfolio {
   background-color: #3d3d3d;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white; }
+  border-top: 1px solid white;
+  border-bottom: 1px solid white; }
   #portfolio .siteicon {
     display: inline-block;
     position: relative; }
@@ -928,9 +948,9 @@ input[type="checkbox"]#contactopen:checked ~ div {
   transition: 1s; }
   #contact .width-250 {
     width: 250px; }
-  #contact h2, #contact p {
+  #contact h3, #contact p {
     margin: 5px; }
-  #contact h2 {
+  #contact h3 {
     background-color: black;
     color: #B8B8B8;
     font-size: 22px;
@@ -1018,7 +1038,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
     -o-transform: rotate(180deg);
     transform: rotate(180deg); }
 
-h1 {
+h2 {
   font-family: troika !important; }
 
 #footer {
@@ -1090,9 +1110,6 @@ h1 {
         float: left;
         border-right: 1px solid black;
         background-color: #1f1f22; }
-        #topmenu ul#nav li a {
-          position: absolute;
-          line-height: 45px; }
   #title {
     height: 350px; }
     #title #svgcontent {
@@ -1105,9 +1122,8 @@ h1 {
     width: 100%;
     height: 360px; }
   #about .col {
-    width: 60%;
+    width: calc(65% - 80px);
     margin: 5%;
-    padding: 0;
     float: left; }
     #about .col.traits-list {
       margin-top: 100px; }
@@ -1128,10 +1144,12 @@ h1 {
     height: 670px !important; } }
 
 @media screen and (max-width: 840px) {
-  .small h1 {
-    margin-top: -50px; }
   #about .col {
-    width: 90%; }
+    width: calc(90% - 80px);
+    padding: 10px 25px; }
+  #experience p {
+    font-size: 24px;
+    font-size: 1.5rem; }
   #contact .width-250 {
     width: 100%;
     margin: auto; }
@@ -1143,18 +1161,13 @@ h1 {
 @media screen and (max-width: 680px) {
   .colmarg {
     display: none; }
-  #topmenu h2 {
-    margin-left: 285px;
-    bottom: -17px;
-    font-size: 25px;
-    font-size: 1.5625rem; }
   #name h2, #name h1, #name p {
     padding-left: 0 !important; }
   #about .traits-list #stats {
     padding: 20px 5%; } }
 
 @media screen and (max-width: 500px) {
-  body h1 {
+  body h2 {
     font-size: 30px;
     font-size: 1.875rem; }
   .bar {
@@ -1162,8 +1175,8 @@ h1 {
   #topmenu ul#nav {
     position: fixed; }
     #topmenu ul#nav li {
-      font-size: 20px;
-      font-size: 1.25rem; }
+      font-size: 18px;
+      font-size: 1.125rem; }
   #returntotop {
     right: 0;
     bottom: 50px;
@@ -1173,6 +1186,9 @@ h1 {
       top: 10%;
       left: 60%;
       width: 30px; }
+  #about .col {
+    width: calc(100% - 40px);
+    margin: 5% 0; }
   #about .desc h3 {
     font-size: 22px;
     font-size: 1.375rem; }
@@ -1190,10 +1206,14 @@ h1 {
       margin-top: 10px;
       margin-left: 25px;
       margin-bottom: 60px; }
+  #experience p {
+    font-size: 16px;
+    font-size: 1rem; }
+  #skills.bar {
+    padding: 0; }
   #skills .width-per-48 {
     width: 100%; }
   #skills .skillbox {
-    padding: 0;
     margin: 25px 0; }
   #skills .nth2 {
     left: 18%; }
@@ -1217,20 +1237,17 @@ h1 {
   #contact #map-canvas {
     height: 175px;
     width: 225px; }
+  #contact a {
+    font-size: 16px;
+    font-size: 1rem; }
   #footer {
     padding: 0;
     width: 100%; } }
 
 @media screen and (max-width: 350px) {
-  #topmenu h1 {
-    margin-top: 35px;
-    font-size: 50px;
-    font-size: 3.125rem; }
-    #topmenu h1 b {
-      font-size: 60px;
-      font-size: 3.75rem; }
-  #topmenu.small h1 {
-    margin-top: -25px; }
+  #topmenu ul#nav li {
+    font-size: 14px;
+    font-size: 0.875rem; }
   #title #name h1 {
     font-size: 40px;
     font-size: 2.5rem; }
@@ -1242,6 +1259,12 @@ h1 {
   #skills .skillchart .bars > div .filler .percent {
     font-size: 15px;
     font-size: 0.9375rem; }
+  #about .desc h3 {
+    font-size: 20px;
+    font-size: 1.25rem; }
+  #about .desc p {
+    font-size: 18px;
+    font-size: 1.125rem; }
   #contact .contactinfo {
     margin: 0; }
   #contact .where {
