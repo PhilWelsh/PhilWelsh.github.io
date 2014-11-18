@@ -561,6 +561,92 @@ a {
     stroke-miterlimit: 4;
     stroke-opacity: 1;
     stroke-dasharray: none; }
+  #title .blackboard #svg-scrolldown {
+    position: absolute;
+    left: 200px;
+    top: 380px; }
+    #title .blackboard #svg-scrolldown path {
+      fill: none;
+      stroke-opacity: 1;
+      stroke: #ffffff;
+      pointer-events: inherit;
+      stroke-dasharray: 250;
+      stroke-dashoffset: 250;
+      stroke-width: 3px;
+      -moz-animation: dash 2s linear forwards;
+      -o-animation: dash 2s linear forwards;
+      -webkit-animation: dash 2s linear forwards;
+      animation: dash 2s linear forwards; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(1) {
+        -moz-animation-delay: 0.5s;
+        -o-animation-delay: 0.5s;
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(2) {
+        -moz-animation-delay: 0.75s;
+        -o-animation-delay: 0.75s;
+        -webkit-animation-delay: 0.75s;
+        animation-delay: 0.75s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(3) {
+        -moz-animation-delay: 1s;
+        -o-animation-delay: 1s;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(4) {
+        -moz-animation-delay: 1.25s;
+        -o-animation-delay: 1.25s;
+        -webkit-animation-delay: 1.25s;
+        animation-delay: 1.25s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(5) {
+        -moz-animation-delay: 1.5s;
+        -o-animation-delay: 1.5s;
+        -webkit-animation-delay: 1.5s;
+        animation-delay: 1.5s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(6) {
+        -moz-animation-delay: 1.75s;
+        -o-animation-delay: 1.75s;
+        -webkit-animation-delay: 1.75s;
+        animation-delay: 1.75s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(7) {
+        -moz-animation-delay: 2s;
+        -o-animation-delay: 2s;
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(8) {
+        -moz-animation-delay: 2.25s;
+        -o-animation-delay: 2.25s;
+        -webkit-animation-delay: 2.25s;
+        animation-delay: 2.25s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(9) {
+        -moz-animation-delay: 2.5s;
+        -o-animation-delay: 2.5s;
+        -webkit-animation-delay: 2.5s;
+        animation-delay: 2.5s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(10) {
+        -moz-animation-delay: 2.75s;
+        -o-animation-delay: 2.75s;
+        -webkit-animation-delay: 2.75s;
+        animation-delay: 2.75s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(11) {
+        -moz-animation-delay: 3s;
+        -o-animation-delay: 3s;
+        -webkit-animation-delay: 3s;
+        animation-delay: 3s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(12) {
+        -moz-animation-delay: 3.25s;
+        -o-animation-delay: 3.25s;
+        -webkit-animation-delay: 3.25s;
+        animation-delay: 3.25s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(13) {
+        -moz-animation-delay: 3.5s;
+        -o-animation-delay: 3.5s;
+        -webkit-animation-delay: 3.5s;
+        animation-delay: 3.5s; }
+      #title .blackboard #svg-scrolldown path:nth-of-type(14) {
+        -moz-animation-delay: 4.25s;
+        -o-animation-delay: 4.25s;
+        -webkit-animation-delay: 4.25s;
+        animation-delay: 4.25s; }
   #title .blackboard .creative {
     z-index: 9;
     left: 0px;
@@ -604,10 +690,10 @@ a {
       -o-animation: dash 2s linear forwards;
       -webkit-animation: dash 2s linear forwards;
       animation: dash 2s linear forwards;
-      -moz-animation-delay: 2.5s;
-      -o-animation-delay: 2.5s;
-      -webkit-animation-delay: 2.5s;
-      animation-delay: 2.5s; }
+      -moz-animation-delay: 5.5s;
+      -o-animation-delay: 5.5s;
+      -webkit-animation-delay: 5.5s;
+      animation-delay: 5.5s; }
   #title .blackboard .cool {
     z-index: 9;
     /*left: 1500px;
@@ -623,10 +709,10 @@ a {
     -o-animation: coolspin 2s forwards;
     -webkit-animation: coolspin 2s forwards;
     animation: coolspin 2s forwards;
-    -moz-animation-delay: 7s;
-    -o-animation-delay: 7s;
-    -webkit-animation-delay: 7s;
-    animation-delay: 7s; }
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s; }
   #title .blackboard .keeping {
     left: 900px;
     top: 70px; }
@@ -646,10 +732,10 @@ a {
       -o-animation: dash 3s linear forwards;
       -webkit-animation: dash 3s linear forwards;
       animation: dash 3s linear forwards;
-      -moz-animation-delay: 6s;
-      -o-animation-delay: 6s;
-      -webkit-animation-delay: 6s;
-      animation-delay: 6s; }
+      -moz-animation-delay: 8s;
+      -o-animation-delay: 8s;
+      -webkit-animation-delay: 8s;
+      animation-delay: 8s; }
   #title .blackboard .constantly {
     left: 1250px;
     top: 40px;
@@ -1128,7 +1214,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
   position: relative;
   height: 80px;
   color: white;
-  background-color: #131313;
+  background-color: #0e0e0e;
   font-family: bebas;
   -moz-transition: 1s;
   -o-transition: 1s;
@@ -1298,12 +1384,6 @@ h2 {
         float: left;
         border-right: 1px solid black;
         background-color: #1f1f22; }
-  #title {
-    height: 350px; }
-    #title #svgcontent {
-      width: 280px;
-      height: 280px;
-      left: 30px; }
   .text {
     padding: 75px 0; }
   #about #stripe {
@@ -1332,6 +1412,14 @@ h2 {
     height: 670px !important; } }
 
 @media screen and (max-width: 840px) {
+  #title {
+    height: 350px; }
+    #title #svgcontent {
+      width: 280px;
+      height: 280px;
+      left: 30px; }
+    #title .blackboard #svg-scrolldown {
+      top: 250px; }
   #about .col {
     width: calc(90% - 80px);
     padding: 10px 25px; }
@@ -1436,6 +1524,8 @@ h2 {
   #topmenu ul#nav li {
     font-size: 14px;
     font-size: 0.875rem; }
+  #title .blackboard #svg-scrolldown {
+    left: 130px; }
   #title #name h1 {
     font-size: 40px;
     font-size: 2.5rem;

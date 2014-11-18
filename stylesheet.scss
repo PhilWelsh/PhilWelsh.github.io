@@ -826,6 +826,79 @@ a {
             stroke-dasharray: none;
         }
 
+        #svg-scrolldown {
+            position: absolute;
+            left: 200px;
+            top: 380px;
+
+            path {
+                fill: none;
+                stroke-opacity: 1;
+                stroke: #ffffff;
+                pointer-events: inherit;
+                stroke-dasharray: 250;
+                stroke-dashoffset: 250;
+                stroke-width: 3px;
+                @include svganimation(dash, 2s, linear, forwards);
+
+                &:nth-of-type(1) {
+                    @include animation-delay(0.5s);
+                }
+
+                &:nth-of-type(2) {
+                    @include animation-delay(0.75s);
+                }
+
+                &:nth-of-type(3) {
+                    @include animation-delay(1s);
+                }
+
+                &:nth-of-type(4) {
+                    @include animation-delay(1.25s);
+                }
+
+                &:nth-of-type(5) {
+                    @include animation-delay(1.5s);
+                }
+
+                &:nth-of-type(6) {
+                    @include animation-delay(1.75s);
+                }
+
+                &:nth-of-type(7) {
+                    @include animation-delay(2s);
+                }
+
+                &:nth-of-type(8) {
+                    @include animation-delay(2.25s);
+                }
+
+                &:nth-of-type(9) {
+                    @include animation-delay(2.5s);
+                }
+
+                &:nth-of-type(10) {
+                    @include animation-delay(2.75s);
+                }
+
+                &:nth-of-type(11) {
+                    @include animation-delay(3s);
+                }
+
+                &:nth-of-type(12) {
+                    @include animation-delay(3.25s);
+                }
+
+                &:nth-of-type(13) {
+                    @include animation-delay(3.5s);
+                }
+
+                &:nth-of-type(14) {
+                    @include animation-delay(4.25s);
+                }
+            }
+        }
+
         .creative {
             z-index: 9;
             left: 0px;
@@ -868,7 +941,7 @@ a {
                 stroke-dashoffset: 550;
                 stroke-width: 3px;
                 @include svganimation(dash, 2s, linear, forwards);
-                @include animation-delay(2.5s);
+                @include animation-delay(5.5s);
             }
         }
 
@@ -887,7 +960,7 @@ a {
             -o-animation: coolspin 2s forwards;
             -webkit-animation: coolspin 2s forwards;
             animation: coolspin 2s forwards;
-            @include animation-delay(7s);
+            @include animation-delay(1s);
         }
 
         .keeping {
@@ -909,7 +982,7 @@ a {
                 stroke-dashoffset: 250;
                 stroke-width: 3px;
                 @include svganimation(dash, 3s, linear, forwards);
-                @include animation-delay(6s);
+                @include animation-delay(8s);
             }
         }
 
@@ -1507,7 +1580,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
     position: relative;
     height: 80px;
     color: white;
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(14, 14, 14);
     font-family: bebas;
     @include transition(1s);
 
@@ -1718,17 +1791,6 @@ h2 {
         }
     }
 
-    #title {
-        height: 350px;
-
-        #svgcontent {
-            width: 280px;
-            height: 280px;
-            left: 30px;
-        }
-    }
-
-
     .text {
         padding: 75px 0;
     }
@@ -1782,6 +1844,20 @@ h2 {
 
 @media screen and (max-width: 840px) {
 
+    #title {
+        height: 350px;
+
+        #svgcontent {
+            width: 280px;
+            height: 280px;
+            left: 30px;
+        }
+
+        .blackboard #svg-scrolldown {
+            top: 250px;
+        }
+    }
+
     #about {
         .col {
             width: calc(90% - 80px);
@@ -1808,6 +1884,7 @@ h2 {
 }
 
 @media screen and (max-width: 680px) {
+
     .colmarg {
         display: none;
     }
@@ -1969,10 +2046,14 @@ h2 {
         }
     }
 
+    #title .blackboard #svg-scrolldown {
+        left: 130px;
+    }
+
     #title #name {
         h1 {
             @include font-size(40px);
-            top:40px;
+            top: 40px;
         }
 
         p {
