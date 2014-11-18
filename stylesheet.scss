@@ -46,6 +46,19 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'lunashandwriting';
+    src: url('fonts/lunashandwriting-webfont.eot');
+    src: url('fonts/lunashandwriting-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lunashandwriting-webfont.woff2') format('woff2'),
+         url('fonts/lunashandwriting-webfont.woff') format('woff'),
+         url('fonts/lunashandwriting-webfont.ttf') format('truetype'),
+         url('fonts/lunashandwriting-webfont.svg#lunas_handwriting_medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
@@ -106,6 +119,12 @@
 
 
 //IMPORTS
+.crop-center {
+    max-width: 2000px;
+    margin: auto;
+    position: relative;
+}
+
 .sizefull {
     height: 100%;
     width: 100%;
@@ -176,6 +195,16 @@
             text-align: center;
         }
     }
+}
+
+.max-width-800 {
+    max-width: 800px;
+}
+
+.container {
+    width: 100%;
+    max-width: 2304px;
+    margin: auto;
 }
 
 @mixin rotate($degrees) {
@@ -816,6 +845,58 @@ a {
             position: absolute;
         }
 
+        .speechbubble {
+            left: 1290px;
+            top: 90px;
+        }
+
+        .modern {
+            left: 1225px;
+            top: 280px;
+        }
+
+        .end {
+            top: 28px;
+            left: 1737px;
+        }
+
+        .blackboard-text {
+            font-family: lunashandwriting;
+            color: white;
+            position: absolute;
+            font-size: 40px;
+
+            &.thinking {
+                top: 190px;
+                left: 490px;
+                width: 250px;
+            }
+
+            &.box {
+                top: 258px;
+                left: 594px;
+                text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+            }
+
+            &.tocreate {
+                top: 360px;
+                left: 420px;
+                width: 270px;
+            }
+
+            &.keeping {
+                top: 10px;
+                left: 900px;
+                width: 310px;
+            }
+
+            &.constantly {
+                top: 80px;
+                left: 1320px;
+                width: 300px;
+            }
+        }
+
         .svg {
             fill: #ff2a2a;
             fill-opacity: 0;
@@ -943,6 +1024,10 @@ a {
                 @include svganimation(dash, 2s, linear, forwards);
                 @include animation-delay(5.5s);
             }
+
+            path:nth-of-type(-n+11) {
+                @include animation-delay(4s);
+            }
         }
 
         .cool {
@@ -982,6 +1067,9 @@ a {
                 stroke-dashoffset: 250;
                 stroke-width: 3px;
                 @include svganimation(dash, 3s, linear, forwards);
+            }
+
+            path:nth-of-type(-n+11) {
                 @include animation-delay(8s);
             }
         }
@@ -1178,10 +1266,10 @@ a {
 
     #stripe {
         background: url(img/origami3.jpg) no-repeat;
-        background-size: 1001px 100%;
+        background-size: 50% 100%;
         background-attachment: fixed;
         position: absolute;
-        height: 420px;
+        height: 470px;
         width: 50%;
         opacity: 0.4;
     }
@@ -1347,7 +1435,7 @@ a {
 
 #experience {
     font-family: kgbo;
-    /*background: #3d3d3d;*/
+    background: rgba(1,1,1,.4);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 );
     position: relative;
 
@@ -1440,11 +1528,6 @@ a {
     border-top: 1px solid gray;
     height: 100%;
     font-family: oswaldbold;
-
-    > div {
-        max-width: 500px;
-        margin: auto;
-    }
 
     .width-per-48 {
         width: 48%;
@@ -1543,7 +1626,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
 }
 
 #portfolio {
-    background-color: #3d3d3d;
+    background-color: #1B1B1B;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
 
@@ -1583,6 +1666,10 @@ input[type="checkbox"]#contactopen:checked ~ div {
     background-color: rgb(14, 14, 14);
     font-family: bebas;
     @include transition(1s);
+
+    .container{
+        max-width:1200px;
+    }
 
     .width-250 {
         width: 250px;
@@ -1706,16 +1793,16 @@ h2 {
     border-top: 1px solid rgba(255, 255, 255, 0.5);
 
     h3 {
+        width: 100px;
+        margin: auto;
+        margin-top: 15px;
         cursor: default;
-        margin: 0;
-        margin-top: 17px;
 
         i {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
     }
-
-    ul {
+    /*ul {
         float: right;
         margin: 0;
         margin-top: 20px;
@@ -1732,19 +1819,14 @@ h2 {
                 border-color: orange;
             }
         }
-    }
-
-
-
-
+    }*/
     a {
         text-decoration: none;
         color: inherit;
+        transition: $fast;
 
         &:hover {
-            color: orange;
-            border-color: orange;
-            transition: $slow;
+            color: #D1702C;
         }
     }
 }
@@ -1757,7 +1839,29 @@ h2 {
     padding: 175px 0;
 }
 
+
+
 //MOBILE
+.modern, .constantly, .speechbubble {
+    transition: $fast;
+}
+
+@media screen and (max-width: 1650px) {
+    .modern, .constantly, .speechbubble {
+        opacity: 0;
+    }
+}
+
+.cool, .keeping, #svg-arrow {
+    transition: $fast;
+}
+
+@media screen and (max-width: 1225px) {
+    .cool, .keeping, #svg-arrow {
+        opacity: 0;
+    }
+}
+
 @media screen and (max-width: 1065px) {
     .bar {
         padding: 0 10%;
@@ -1799,12 +1903,16 @@ h2 {
         #stripe {
             width: 100%;
             height: 360px;
+            background-size: cover;
+            top: 0;
+            background-attachment: inherit;
         }
 
         .col {
             width: calc(65% - 80px);
             margin: 5%;
-            float: left;
+            float: none;
+            margin: 5% auto;
 
             &.traits-list {
                 margin-top: 100px;
@@ -1842,6 +1950,10 @@ h2 {
     }
 }
 
+.blackboard-text, .creative, #svg-box {
+    transition: $fast;
+}
+
 @media screen and (max-width: 840px) {
 
     #title {
@@ -1855,6 +1967,10 @@ h2 {
 
         .blackboard #svg-scrolldown {
             top: 250px;
+        }
+
+        .blackboard-text, .creative, #svg-box {
+            opacity: 0;
         }
     }
 

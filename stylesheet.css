@@ -41,6 +41,18 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'lunashandwriting';
+  src: url('fonts/lunashandwriting-webfont.eot');
+  src: url('fonts/lunashandwriting-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/lunashandwriting-webfont.woff2') format('woff2'), url('fonts/lunashandwriting-webfont.woff') format('woff'), url('fonts/lunashandwriting-webfont.ttf') format('truetype'), url('fonts/lunashandwriting-webfont.svg#lunas_handwriting_medium') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+.crop-center {
+  max-width: 2000px;
+  margin: auto;
+  position: relative; }
+
 .sizefull {
   height: 100%;
   width: 100%; }
@@ -94,6 +106,14 @@
     .centerdiv ul li {
       display: inline;
       text-align: center; }
+
+.max-width-800 {
+  max-width: 800px; }
+
+.container {
+  width: 100%;
+  max-width: 2304px;
+  margin: auto; }
 
 .highlighted {
   color: #7979a2 !important;
@@ -553,6 +573,40 @@ a {
     position: absolute; }
   #title .blackboard img {
     position: absolute; }
+  #title .blackboard .speechbubble {
+    left: 1290px;
+    top: 90px; }
+  #title .blackboard .modern {
+    left: 1225px;
+    top: 280px; }
+  #title .blackboard .end {
+    top: 28px;
+    left: 1737px; }
+  #title .blackboard .blackboard-text {
+    font-family: lunashandwriting;
+    color: white;
+    position: absolute;
+    font-size: 40px; }
+    #title .blackboard .blackboard-text.thinking {
+      top: 190px;
+      left: 490px;
+      width: 250px; }
+    #title .blackboard .blackboard-text.box {
+      top: 258px;
+      left: 594px;
+      text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF; }
+    #title .blackboard .blackboard-text.tocreate {
+      top: 360px;
+      left: 420px;
+      width: 270px; }
+    #title .blackboard .blackboard-text.keeping {
+      top: 10px;
+      left: 900px;
+      width: 310px; }
+    #title .blackboard .blackboard-text.constantly {
+      top: 80px;
+      left: 1320px;
+      width: 300px; }
   #title .blackboard .svg {
     fill: #ff2a2a;
     fill-opacity: 0;
@@ -694,6 +748,11 @@ a {
       -o-animation-delay: 5.5s;
       -webkit-animation-delay: 5.5s;
       animation-delay: 5.5s; }
+    #title .blackboard #svg-box path:nth-of-type(-n+11) {
+      -moz-animation-delay: 4s;
+      -o-animation-delay: 4s;
+      -webkit-animation-delay: 4s;
+      animation-delay: 4s; }
   #title .blackboard .cool {
     z-index: 9;
     /*left: 1500px;
@@ -731,7 +790,8 @@ a {
       -moz-animation: dash 3s linear forwards;
       -o-animation: dash 3s linear forwards;
       -webkit-animation: dash 3s linear forwards;
-      animation: dash 3s linear forwards;
+      animation: dash 3s linear forwards; }
+    #title .blackboard #svg-arrow path:nth-of-type(-n+11) {
       -moz-animation-delay: 8s;
       -o-animation-delay: 8s;
       -webkit-animation-delay: 8s;
@@ -922,10 +982,10 @@ a {
     display: none; }
   #about #stripe {
     background: url(img/origami3.jpg) no-repeat;
-    background-size: 1001px 100%;
+    background-size: 50% 100%;
     background-attachment: fixed;
     position: absolute;
-    height: 420px;
+    height: 470px;
     width: 50%;
     opacity: 0.4; }
   #about .col {
@@ -1048,7 +1108,7 @@ a {
 
 #experience {
   font-family: kgbo;
-  /*background: #3d3d3d;*/
+  background: rgba(1, 1, 1, 0.4);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6d5e', endColorstr='#6f6d5e',GradientType=1 );
   position: relative; }
   #experience:before {
@@ -1122,9 +1182,6 @@ a {
   border-top: 1px solid gray;
   height: 100%;
   font-family: oswaldbold; }
-  #skills > div {
-    max-width: 500px;
-    margin: auto; }
   #skills .width-per-48 {
     width: 48%; }
   #skills .skillbox {
@@ -1188,7 +1245,7 @@ input[type="checkbox"]#contactopen:checked ~ div {
       width: 270px; }
 
 #portfolio {
-  background-color: #3d3d3d;
+  background-color: #1B1B1B;
   border-top: 1px solid white;
   border-bottom: 1px solid white; }
   #portfolio .siteicon {
@@ -1220,6 +1277,8 @@ input[type="checkbox"]#contactopen:checked ~ div {
   -o-transition: 1s;
   -webkit-transition: 1s;
   transition: 1s; }
+  #contact .container {
+    max-width: 1200px; }
   #contact .width-250 {
     width: 250px; }
   #contact h3, #contact p {
@@ -1324,39 +1383,58 @@ h2 {
   height: 50px;
   padding: 0 10%;
   width: 80%;
-  border-top: 1px solid rgba(255, 255, 255, 0.5); }
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  /*ul {
+        float: right;
+        margin: 0;
+        margin-top: 20px;
+        padding: 0;
+
+        li {
+            display: inline;
+            padding-left: 5px;
+            border-left: solid white;
+            transition: $faster;
+
+            &:hover {
+                color: orange;
+                border-color: orange;
+            }
+        }
+    }*/ }
   #footer h3 {
-    cursor: default;
-    margin: 0;
-    margin-top: 17px; }
+    width: 100px;
+    margin: auto;
+    margin-top: 15px;
+    cursor: default; }
     #footer h3 i {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
-  #footer ul {
-    float: right;
-    margin: 0;
-    margin-top: 20px;
-    padding: 0; }
-    #footer ul li {
-      display: inline;
-      padding-left: 5px;
-      border-left: solid white;
-      transition: all 0.25s ease-in-out; }
-      #footer ul li:hover {
-        color: orange;
-        border-color: orange; }
   #footer a {
     text-decoration: none;
-    color: inherit; }
+    color: inherit;
+    transition: all 0.5s ease-in-out; }
     #footer a:hover {
-      color: orange;
-      border-color: orange;
-      transition: all 0.8s ease-in-out; }
+      color: #D1702C; }
 
 .shadow {
   box-shadow: 0px 3px 6px 0px #DADADA, 0px 0px 5px 0px #A7A7A7; }
 
 .text {
   padding: 175px 0; }
+
+.modern, .constantly, .speechbubble {
+  transition: all 0.5s ease-in-out; }
+
+@media screen and (max-width: 1650px) {
+  .modern, .constantly, .speechbubble {
+    opacity: 0; } }
+
+.cool, .keeping, #svg-arrow {
+  transition: all 0.5s ease-in-out; }
+
+@media screen and (max-width: 1225px) {
+  .cool, .keeping, #svg-arrow {
+    opacity: 0; } }
 
 @media screen and (max-width: 1065px) {
   .bar {
@@ -1388,11 +1466,15 @@ h2 {
     padding: 75px 0; }
   #about #stripe {
     width: 100%;
-    height: 360px; }
+    height: 360px;
+    background-size: cover;
+    top: 0;
+    background-attachment: inherit; }
   #about .col {
     width: calc(65% - 80px);
     margin: 5%;
-    float: left; }
+    float: none;
+    margin: 5% auto; }
     #about .col.traits-list {
       margin-top: 100px; }
   #about hr {
@@ -1411,6 +1493,9 @@ h2 {
   input[type="checkbox"]#contactopen:checked ~ div {
     height: 670px !important; } }
 
+.blackboard-text, .creative, #svg-box {
+  transition: all 0.5s ease-in-out; }
+
 @media screen and (max-width: 840px) {
   #title {
     height: 350px; }
@@ -1420,6 +1505,8 @@ h2 {
       left: 30px; }
     #title .blackboard #svg-scrolldown {
       top: 250px; }
+    #title .blackboard-text, #title .creative, #title #svg-box {
+      opacity: 0; }
   #about .col {
     width: calc(90% - 80px);
     padding: 10px 25px; }
