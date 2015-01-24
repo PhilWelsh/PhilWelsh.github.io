@@ -1335,7 +1335,8 @@ input[type="checkbox"]#contactopen:checked ~ div {
   #contact .text {
     padding: 30px 0; }
   #contact .contactinfo {
-    margin: 20px; }
+    margin: 20px;
+    margin-left: 0; }
   #contact .where {
     left: initial;
     top: 0;
