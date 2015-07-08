@@ -1,4 +1,4 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @font-face {
   font-family: 'arcade';
   src: url('fonts/arcade-webfont.eot');
@@ -361,7 +361,7 @@ h2 {
         position: absolute;
         bottom: -20px;
         right: 40px;
-        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiP…0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=); }
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiP�0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=); }
       #topmenu #soc-med ul.soc-med li {
         display: block;
         height: 70px;
@@ -1048,6 +1048,7 @@ a {
       width: 200px;
       display: inline-block; }
       #about #stats .abilities p {
+	  display:inline-block;
         color: black; }
       #about #stats .abilities .character {
         position: absolute;
