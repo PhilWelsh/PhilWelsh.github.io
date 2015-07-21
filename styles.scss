@@ -19,11 +19,14 @@ animation*/
 
 @font-face {
     font-family: 'Raavi';
-    src: url('file:///d:\Users\User\Documents\Visual Studio 2013\WebSites\WebSite1\fonts\Raavi.ttf') format('truetype');
+    src: url('fonts\Raavi.ttf') format('truetype');
 }
+
 
 body {
     margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Open Sans;
     font-family: Raavi;
 }
 
@@ -50,6 +53,33 @@ p {
     font-size: 24px;
 }
 
+h2 ~ .h2-extra {
+    color: #D8D8D8;
+    font-size: 18px;
+    opacity: 0;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    -moz-transition-delay: 1.5s;
+    -o-transition-delay: 1.5s;
+    -webkit-transition-delay: 1.5s;
+    transition-delay: 1.5s;
+    border-top: 6px solid #D8D8D8;
+    color: #D8D8D8;
+    font-size: 18px;
+    position: absolute;
+    top: 20px;
+    padding-left: 11px;
+
+    &.animated {
+        opacity: 1;
+    }
+}
+
+.h2-and-extra {
+    position: relative;
+}
 
 header {
     background: $blue;
@@ -66,6 +96,7 @@ header {
         height: 60px;
         background: white;
         color: $blue;
+        cursor: pointer;
 
         p {
             position: absolute;
@@ -168,7 +199,7 @@ section.home-section {
         height: 250px;
         overflow: hidden;
 
-        * {
+        .one, .two {
             position: absolute;
         }
 
@@ -182,16 +213,29 @@ section.home-section {
         }
 
         .one {
-            bottom: -100px;
+            bottom: 0;
         }
 
         .two {
-            top: -100px;
+            top: 0;
         }
     }
 
     hr {
         margin: 0;
+    }
+
+    .under-construction {
+        font-size: 25px;
+        position: absolute;
+        bottom: 0;
+        left: -30%;
+        height: 30px;
+        width: 100%;
+        -moz-animation: walk-across linear 35s infinite;
+        -o-animation: walk-across linear 35s infinite;
+        -webkit-animation: walk-across linear 35s infinite;
+        animation: walk-across linear 35s infinite;
     }
 }
 
@@ -289,7 +333,6 @@ section.about-section {
 }
 
 .about-history {
-    padding-top: 100px;
     padding-bottom: 100px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#202020+50,202020+50,ffffff+50,ffffff+98 */
     background: #202020; /* Old browsers */
@@ -341,9 +384,19 @@ section.skills-section {
         position: relative;
         padding-right: 10px;
         border-right: 5px solid $gray;
+
+        @media screen and (max-width:500px) {
+            border-right: none;
+            padding-bottom: 3px;
+            border-bottom: 5px solid black;
+            font-size: 0;
+            display: block;
+            text-align: center;
+        }
     }
 
     .skill {
+        position: relative;
         width: 150px;
         height: 100px;
         background: #202020;
@@ -352,6 +405,12 @@ section.skills-section {
         -webkit-transition: all 1s;
         transition: all 1s;
         cursor: pointer;
+
+        @media screen and (max-width:500px) {
+            display: inline-block;
+            width: 60px;
+            height: 100px;
+        }
 
         h3 {
             position: absolute;
@@ -364,6 +423,10 @@ section.skills-section {
             color: grey;
             font-size: 30px;
             text-align: center;
+
+            @media screen and (max-width:500px) {
+                font-size: 18px;
+            }
         }
 
         &:hover {
@@ -403,6 +466,10 @@ section.skills-section {
         width: calc(100% - 200px);
         height: 400px;
         overflow: hidden;
+
+        @media screen and (max-width:500px) {
+            width: 100%;
+        }
 
         .skill-info {
             position: absolute;
@@ -477,8 +544,15 @@ section.contact-section {
 
         label {
             float: left;
+            position: absolute;
             margin-top: 7px;
             margin-left: 14px;
+
+            @media screen and (max-width: 400px) {
+                margin-top: 11px;
+                margin-left: 6px;
+                font-size: 20px;
+            }
         }
 
         .contact-bar {
@@ -547,7 +621,13 @@ footer {
 }
 
 .two {
+    -moz-animation: anim-two 2s linear forwards;
+    -o-animation: anim-two 2s linear forwards;
+    -webkit-animation: anim-two 2s linear forwards;
     animation: anim-two 2s linear forwards;
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
 
@@ -697,10 +777,12 @@ footer {
     }
 }
 
-@media screen and (max-width: 450px) {
-    section.contact-section .contact-details .contact-bar label {
-        margin-top: 11px;
-        margin-left: 6px;
-        font-size: 20px;
+@-webkit-keyframes walk-across {
+    0% {
+        left: 120%;
+    }
+
+    100% {
+        left: -50%;
     }
 }

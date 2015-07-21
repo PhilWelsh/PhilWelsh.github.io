@@ -2,11 +2,12 @@
 animation*/
 @font-face {
   font-family: 'Raavi';
-  src: url('file:///d:\Users\User\Documents\Visual Studio 2013\WebSites\WebSite1\fonts\Raavi.ttf') format('truetype'); }
+  src: url('fonts\Raavi.ttf') format('truetype'); }
 
 body {
   margin: 0;
-  font-family: Raavi; }
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Raavi', 'Open Sans', sans-serif; }
 
 ul {
   padding: 0;
@@ -27,6 +28,30 @@ h3 {
 p {
   font-size: 24px; }
 
+h2 ~ .h2-extra {
+  color: #D8D8D8;
+  font-size: 18px;
+  opacity: 0;
+  -moz-transition: all 2s;
+  -o-transition: all 2s;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  -moz-transition-delay: 1.5s;
+  -o-transition-delay: 1.5s;
+  -webkit-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+  border-top: 6px solid #D8D8D8;
+  color: #D8D8D8;
+  font-size: 18px;
+  position: absolute;
+  top: 20px;
+  padding-left: 11px; }
+  h2 ~ .h2-extra.animated {
+    opacity: 1; }
+
+.h2-and-extra {
+  position: relative; }
+
 header {
   background: #364277;
   color: white;
@@ -41,7 +66,8 @@ header {
     width: 70px;
     height: 60px;
     background: white;
-    color: #364277; }
+    color: #364277;
+    cursor: pointer; }
     header .site-logo p {
       position: absolute;
       bottom: 0;
@@ -118,7 +144,7 @@ section.home-section {
     position: relative;
     height: 250px;
     overflow: hidden; }
-    section.home-section .half * {
+    section.home-section .half .one, section.home-section .half .two {
       position: absolute; }
     section.home-section .half h1, section.home-section .half h2 {
       display: inline-block;
@@ -128,11 +154,22 @@ section.home-section {
       text-align: center;
       border-top: none; }
     section.home-section .half .one {
-      bottom: -100px; }
+      bottom: 0; }
     section.home-section .half .two {
-      top: -100px; }
+      top: 0; }
   section.home-section hr {
     margin: 0; }
+  section.home-section .under-construction {
+    font-size: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    -moz-animation: walk-across linear 35s infinite;
+    -o-animation: walk-across linear 35s infinite;
+    -webkit-animation: walk-across linear 35s infinite;
+    animation: walk-across linear 35s infinite; }
 
 section.about-section .stats {
   padding: 15px 35px; }
@@ -198,7 +235,6 @@ section.about-section .level {
       transition-delay: 2.5s; }
 
 .about-history {
-  padding-top: 100px;
   padding-bottom: 100px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#202020+50,202020+50,ffffff+50,ffffff+98 */
   background: #202020;
@@ -233,7 +269,16 @@ section.skills-section .skills-list {
   position: relative;
   padding-right: 10px;
   border-right: 5px solid #202020; }
+  @media screen and (max-width: 500px) {
+    section.skills-section .skills-list {
+      border-right: none;
+      padding-bottom: 3px;
+      border-bottom: 5px solid black;
+      font-size: 0;
+      display: block;
+      text-align: center; } }
 section.skills-section .skill {
+  position: relative;
   width: 150px;
   height: 100px;
   background: #202020;
@@ -242,6 +287,11 @@ section.skills-section .skill {
   -webkit-transition: all 1s;
   transition: all 1s;
   cursor: pointer; }
+  @media screen and (max-width: 500px) {
+    section.skills-section .skill {
+      display: inline-block;
+      width: 60px;
+      height: 100px; } }
   section.skills-section .skill h3 {
     position: absolute;
     left: 0;
@@ -253,6 +303,9 @@ section.skills-section .skill {
     color: grey;
     font-size: 30px;
     text-align: center; }
+    @media screen and (max-width: 500px) {
+      section.skills-section .skill h3 {
+        font-size: 18px; } }
   section.skills-section .skill:hover {
     background: black; }
     section.skills-section .skill:hover h3 {
@@ -273,6 +326,9 @@ section.skills-section .skills-info {
   width: calc(100% - 200px);
   height: 400px;
   overflow: hidden; }
+  @media screen and (max-width: 500px) {
+    section.skills-section .skills-info {
+      width: 100%; } }
   section.skills-section .skills-info .skill-info {
     position: absolute;
     max-width: 940px;
@@ -320,8 +376,14 @@ section.contact-section .contact-details {
     background: #202020; }
   section.contact-section .contact-details label {
     float: left;
+    position: absolute;
     margin-top: 7px;
     margin-left: 14px; }
+    @media screen and (max-width: 400px) {
+      section.contact-section .contact-details label {
+        margin-top: 11px;
+        margin-left: 6px;
+        font-size: 20px; } }
   section.contact-section .contact-details .contact-bar {
     height: 50px;
     margin-bottom: 20px;
@@ -365,7 +427,13 @@ footer {
     bottom: 0; } }
 
 .two {
+  -moz-animation: anim-two 2s linear forwards;
+  -o-animation: anim-two 2s linear forwards;
+  -webkit-animation: anim-two 2s linear forwards;
   animation: anim-two 2s linear forwards;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
   animation-delay: 1s; }
 
 @-moz-keyframes anim-two {
@@ -484,11 +552,11 @@ footer {
     top: 0;
     left: -1000px; } }
 
-@media screen and (max-width: 450px) {
-  section.contact-section .contact-details .contact-bar label {
-    margin-top: 11px;
-    margin-left: 6px;
-    font-size: 20px; }
- }
+@-webkit-keyframes walk-across {
+  0% {
+    left: 120%; }
+
+  100% {
+    left: -50%; } }
 
 /*# sourceMappingURL=styles.css.map */

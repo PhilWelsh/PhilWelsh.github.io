@@ -1,84 +1,90 @@
-﻿
-$(function () {
-    //Delay transitions until page loaded
-    //for title chalk animations
-    $("window").load(function () {
-        $("body").removeClass("preload");
-    });
-
-    //slick.js 
-    //for experience slider
-    $('.single-item').slick();
-
-    //SCROLL TO
-    $("#topmenu li a.navbutton").on("click", function () {
-        var destination = $(this).attr('data-attr-scroll')
-        if (destination == "#contact") {
-            $('#contactopen').prop('checked', true);
-        }
-        else{}
-        $('body').scrollTo(destination, { duration: 'slow' });
-    });
-    $("#returntotop").on("click", function () {
-        $('body').scrollTo("body", { duration: 'slow' });
-    });
-
-    //SCROLL EFFECTS
-    /* Every time the window is scrolled ... */
-    $(window).scroll(_.throttle(function () {
-
-        //SCROLL TO TOP BOTTOM
-
-        if ($(this).scrollTop() > 100) {
-            $('#returntotop').fadeIn(700);
-        } else {
-            $('#returntotop').fadeOut(700);
-        }
-
-        //APPEAR ON SCROLL
-
-        /* Check the location of each desired element */
-        $('.hideme').each(function () {
-
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var top_of_object = $(this).position().top;
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-            /* If the object is completely visible in the window, fade it in */
-            if (bottom_of_window > top_of_object) {
-                //$(this).removeClass("hideme");
-                $(this).delay(200).animate({ 'opacity': '1' }, 800);
-                $(this).find(".nth1 .filler").delay(400).animate({ 'height': '100%' }, 1300);
-                $(this).find(".nth2 .filler").delay(500).animate({ 'height': '100%' }, 1350);
-                $(this).find(".nth3 .filler").delay(600).animate({ 'height': '100%' }, 1400);
-                $(this).find(".nth4 .filler").delay(700).animate({ 'height': '100%' }, 1450);
-                $(this).find(".nth5 .filler").delay(800).animate({ 'height': '100%' }, 1500);
-                $(this).find(".nth1 .percent").delay(500).animate({ 'top': '10%' }, 1300);
-                $(this).find(".nth2 .percent").delay(600).animate({ 'top': '10%' }, 1400);
-                $(this).find(".nth3 .percent").delay(700).animate({ 'top': '10%' }, 1600);
-                $(this).find(".nth4 .percent").delay(800).animate({ 'top': '10%' }, 1700);
-                $(this).find(".nth5 .percent").delay(900).animate({ 'top': '10%' }, 1800);
-            }
-            //Change to '.addclass("animate") then add that to CSS
-            //$(this).delay(200).animate({ 'opacity': '1' }, 800);
-
-
-        });
-    }, 750));//throttle amount//
-
-    //Skill buttons
-
-    var currentview = "#skillsnth0";
-    var lock = false;   //lock prevents multiple tabs opening
-    $("#skillbuttons a").on("click", function () {
-        if (lock) return;
-        lock = true;
-        var id = $(this).attr('id');
-        var skilltext = "#skills" + id;
-        $(currentview).fadeOut(700, function () {
-            $(skilltext).fadeIn();
-            currentview = skilltext;
-            lock = false;
-        });
-    });
+﻿//MENU NAVIGATION
+$(".menu-button").click(function () {
+    $(".main-nav").toggleClass("active");
 });
+
+$(".main-nav li").click(function () {
+    var buttonId = $(this).attr("id");
+    var goToPage = ("." + buttonId + "-page");
+
+    $(".page").not(goToPage).removeClass("current-page");
+    $(goToPage).addClass("current-page");
+
+    $(".main-nav").toggleClass("active");
+})
+
+//SCROLL TO NEXT SECTION
+
+$(".next-section").click(function () {
+    var nextSectionTop = $(this).parent().next().offset().top;
+    $('html, body').animate({ scrollTop: nextSectionTop }, 1500);
+});
+
+//Skill buttons
+var lock = false;   //lock prevents multiple tabs opening
+$(".skills-list div").on("click", function () {
+
+    var skillButtonId = $(this).attr('id');
+    var skillTextId = skillButtonId + ("Info");
+
+    $(".skills-list div").removeClass("active");
+    $("#" + skillButtonId).addClass("active");
+
+    var thisButtonsColor = $("#" + skillButtonId).attr("attr-color");
+    $(".skills-list").css("border-color", thisButtonsColor);
+
+    $(".skills-info div").not("#" + skillTextId).animate({ "left": "-1000px" }, "slow");
+    $("#" + skillTextId).animate({ "left": "0px" }, "slow");
+});
+
+//SLICK SLIDER (PORTFOLIO)
+$('.portfolio-slide').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 1,
+    arrows: true,
+    responsive: [
+      {
+          breakpoint: 768,
+          settings: {
+              centerPadding: '40px'
+          }
+      }
+    ]
+});
+
+//SYNCING PORTFOLIO INFO AND SLIDER
+$('.portfolio-slide').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    var thisSlide = $(slick.$slides[nextSlide]);
+    var currentId = thisSlide.attr('id');
+    $(".slide").hide()
+    $("#" + currentId + "Info").show();
+});
+
+//ANIMATE IN
+//
+
+var $window = $(window);
+var win_height = $window.height();
+
+function revealOnScroll() {
+    var scrolled = $window.scrollTop();
+    $(".revealOnScroll:not(.animated)").each(function () {
+        var $this = $(this);
+        var offsetTop = $this.offset().top;
+
+        if (scrolled + win_height - 100 > offsetTop) {
+            //IF SELECTOR HAS TIMEOUT ATTACHED, APPLY
+            if ($this.data('timeout')) {
+                window.setTimeout(function () {
+                    $this.addClass('animated');
+                }, parseInt($this.data('timeout'), 10));
+            } else {
+                $this.addClass('animated');
+            }
+        }
+    });
+}
+
+
+$window.on('scroll', revealOnScroll);
