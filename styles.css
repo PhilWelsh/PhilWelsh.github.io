@@ -31,7 +31,7 @@ header {
   z-index: 9;
   top: 0;
   width: 100%;
-  background: #002a4d;
+  background: #000;
   border-bottom: 1px solid #000;
   -webkit-box-shadow: 0 1px 5px 0 black;
   -moz-box-shadow: 0 1px 5px 0 black;
@@ -62,7 +62,7 @@ header {
     float: left;
     margin: 10px 0; }
     header .svg-logo path {
-      fill: white; }
+      fill: #004680; }
   header.invet {
     background: white;
     color: #004680; }
@@ -150,10 +150,10 @@ section {
   padding: 0; }
   .home-section .container {
     position: relative;
-    height: 327px; }
-    @media screen and (min-width: 768px) {
+    height: 250px; }
+    @media screen and (min-width: 992px) {
       .home-section .container {
-        height: 500px; } }
+        height: 450px; } }
   .home-section .hero {
     position: absolute;
     bottom: 0;
@@ -171,23 +171,22 @@ section {
   .home-bg-container div {
     display: none;
     width: 100%;
-    border-color: #002a4d; }
-    @media screen and (min-width: 768px) {
+    border-color: #004680; }
+    @media screen and (min-width: 992px) {
       .home-bg-container div {
         display: block; } }
   .home-bg-container .home-bg-1 {
-    height: 65px;
-    background: white;
-    border-bottom: 15px solid; }
-  .home-bg-container .home-bg-2 {
     height: 60px; }
-  .home-bg-container .home-bg-3 {
+  .home-bg-container .home-bg-2 {
     display: block;
-    height: 334px;
+    height: 250px;
     background-color: white;
     border-top: 7px solid;
     border-bottom: 7px solid;
     background-image: url(img/tyne-panoramic.jpg); }
+    @media screen and (min-width: 992px) {
+      .home-bg-container .home-bg-2 {
+        height: 334px; } }
 
 .hobbies {
   text-align: center; }

@@ -44,7 +44,7 @@ header {
     z-index: 9;
     top: 0;
     width: 100%;
-    background: $blue-dark;
+    background: $black;
     border-bottom: 1px solid $black;
     -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,1);
     -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,1);
@@ -85,7 +85,7 @@ header {
         margin: 10px 0;
 
         path {
-            fill: white;
+            fill: $blue;
         }
     }
 
@@ -200,10 +200,10 @@ section {
 
     .container {
         position: relative;
-        height: 327px;
+        height: 250px;
 
-        @media screen and (min-width: 768px) {
-            height: 500px;
+        @media screen and (min-width: 992px) {
+            height: 450px;
         }
     }
 
@@ -227,31 +227,28 @@ section {
     div {
         display: none;
         width: 100%;
-        border-color: $blue-dark;
+        border-color: $blue;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 992px) {
             display: block;
         }
     }
 
-
     .home-bg-1 {
-        height: 65px;
-        background: white;
-        border-bottom: 15px solid;
-    }
-
-    .home-bg-2 {
         height: 60px;
     }
 
-    .home-bg-3 {
+    .home-bg-2 {
         display: block;
-        height: 334px;
+        height: 250px;
         background-color: white;
         border-top: 7px solid;
         border-bottom: 7px solid;
         background-image: url(img/tyne-panoramic.jpg);
+        
+        @media screen and (min-width: 992px) {
+            height: 334px;
+        }
     }
 }
 
