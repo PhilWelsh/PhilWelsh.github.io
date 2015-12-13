@@ -11,6 +11,7 @@
 
         var skillButtonId = "#" + $(this).attr('id');
         var skillTextId = skillButtonId + ("Info");
+        var skillTitle = skillButtonId + ("Title");
 
         $(skill).removeClass("active");
         $(skillButtonId).addClass("active");
@@ -20,6 +21,9 @@
 
         $(".skill-info div").not(skillTextId).animate({ "top": "-400px" }, "slow");
         $(skillTextId).animate({ "top": "0px" }, "slow");
+
+        $(".skill-title h2").not(skillTitle).animate({ "left": "-400px" }, "slow");
+        $(skillTitle).animate({ "left": "0px" }, "slow");
     });
 
 });

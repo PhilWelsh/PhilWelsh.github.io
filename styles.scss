@@ -4,7 +4,7 @@ $black: #000;
 
 //MIXINS
 
-@font-face {
+/*@font-face {
     font-family: 'Raavi';
     src: url('fonts\Raavi.ttf') format('truetype');
 }
@@ -22,7 +22,7 @@ $black: #000;
 @font-face {
     font-family: 'QuattrocentoSans-Regular';
     src: url('fonts/QuattrocentoSans-Regular.ttf') format('truetype');
-}
+}*/
 
 @font-face {
     font-family: 'Sansation-Regular';
@@ -37,6 +37,37 @@ $black: #000;
 @font-face {
     font-family: 'Sansation-Bold';
     src: url('fonts/Sansation-Bold.ttf') format('truetype'), url('fonts/Sansation-Regular.ttf') format('truetype');
+}
+
+//ANIMATIONS
+@-moz-keyframes animatedBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 10000px 0;
+    }
+}
+
+@-webkit-keyframes animatedBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 10000px 0;
+    }
+}
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -6000px 0;
+    }
 }
 
 header {
@@ -176,6 +207,10 @@ b {
     }
 }
 
+hr {
+    border-top: 1px solid $blue-dark;
+}
+
 section {
     padding: 30px 0;
     border-bottom: 3px solid $blue-dark;
@@ -245,7 +280,11 @@ section {
         border-top: 7px solid;
         border-bottom: 7px solid;
         background-image: url(img/tyne-panoramic.jpg);
-        
+        -moz-animation: animatedBackground 60s linear infinite;
+        -o-animation: animatedBackground 60s linear infinite;
+        -webkit-animation: animatedBackground 60s linear infinite;
+        animation: animatedBackground 60s linear infinite;
+
         @media screen and (min-width: 992px) {
             height: 334px;
         }
@@ -274,6 +313,9 @@ section {
     }
 }
 
+.about-section, .work-section {
+    background: repeating-linear-gradient( 45deg, #FFFFFF, rgba(0, 42, 77, 0.05) 1px, rgba(0, 42, 77, 0.05) 9px, rgba(70, 82, 152, 0) 10px );
+}
 
 .about-skills {
     li a {
@@ -304,7 +346,14 @@ section {
         border-color: white;
     }
 
+    .skill-title {
+        position: relative;
+        height: 50px;
+        overflow: hidden;
+    }
+
     h2 {
+        position: absolute;
         color: white;
     }
 }
