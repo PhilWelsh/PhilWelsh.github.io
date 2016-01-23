@@ -1,23 +1,4 @@
-﻿/*@font-face {
-    font-family: 'Raavi';
-    src: url('fonts/Raavi.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'MODERNA_';
-    src: url('fonts/MODERNA_.TTF') format('truetype');
-}
-
-@font-face {
-    font-family: 'QuattrocentoSans-Bold';
-    src: url('fonts/QuattrocentoSans-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'QuattrocentoSans-Regular';
-    src: url('fonts/QuattrocentoSans-Regular.ttf') format('truetype');
-}*/
-@font-face {
+﻿@font-face {
   font-family: 'Sansation-Regular';
   src: url("fonts/Sansation-Regular.ttf") format("truetype"); }
 
@@ -28,24 +9,6 @@
 @font-face {
   font-family: 'Sansation-Bold';
   src: url("fonts/Sansation-Bold.ttf") format("truetype"), url("fonts/Sansation-Regular.ttf") format("truetype"); }
-
-@-moz-keyframes animatedBackground {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 10000px 0; } }
-
-@-webkit-keyframes animatedBackground {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 10000px 0; } }
-
-@keyframes animatedBackground {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: -6000px 0; } }
 
 header {
   position: fixed;
@@ -118,7 +81,7 @@ h1 {
   display: inline-block;
   border-bottom: 5px solid #002a4d;
   font-size: 40px; }
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 768px) {
     h1 {
       font-size: 50px;
       margin-top: 20px;
@@ -131,7 +94,7 @@ h2 {
   font-weight: bold;
   color: #002a4d;
   font-size: 24px; }
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 768px) {
     h2 {
       font-size: 30px; } }
 
@@ -141,14 +104,14 @@ h3 {
 
 p {
   font-size: 20px; }
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 768px) {
     p {
       font-size: 24px; } }
 
 b {
   font-size: 2rem;
   color: #004680; }
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 768px) {
     b {
       font-size: 2.6rem; } }
 
@@ -171,7 +134,8 @@ section {
 
 .home-section {
   position: relative;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
   .home-section .container {
     position: relative;
     height: 250px; }
@@ -184,8 +148,13 @@ section {
     height: 90%;
     width: 100%;
     margin-left: -15px;
+    margin-bottom: -400px;
     background: url(img/bg-me-cubic.png) no-repeat left bottom;
-    background-size: contain; }
+    background-size: contain;
+    -moz-animation: bounce 1s .5s forwards;
+    -o-animation: bounce 1s .5s forwards;
+    -webkit-animation: bounce 1s .5s forwards;
+    animation: bounce 1s .5s forwards; }
 
 .home-bg-container {
   position: absolute;
@@ -193,27 +162,44 @@ section {
   top: 0;
   left: 0; }
   .home-bg-container div {
-    display: none;
     width: 100%;
     border-color: #004680; }
     @media screen and (min-width: 992px) {
       .home-bg-container div {
         display: block; } }
-  .home-bg-container .home-bg-1 {
-    height: 60px; }
-  .home-bg-container .home-bg-2 {
-    display: block;
-    height: 250px;
+  .home-bg-container .home-slider-top-margin {
+    height: 0; }
+    @media screen and (min-width: 992px) {
+      .home-bg-container .home-slider-top-margin {
+        height: 60px; } }
+  .home-bg-container .home-slider-frame {
+    height: 348px;
     background-color: white;
     border-top: 7px solid;
     border-bottom: 7px solid;
-    background-image: url(img/tyne-panoramic.jpg);
-    -moz-animation: animatedBackground 60s linear infinite;
-    -o-animation: animatedBackground 60s linear infinite;
-    -webkit-animation: animatedBackground 60s linear infinite;
-    animation: animatedBackground 60s linear infinite; }
+    height: 0;
+    margin-top: -70px;
+    -moz-animation: openUp 1s 1s forwards;
+    -o-animation: openUp 1s 1s forwards;
+    -webkit-animation: openUp 1s 1s forwards;
+    animation: openUp 1s 1s forwards; }
+  .home-bg-container .home-slider {
+    display: block;
+    overflow: hidden;
+    margin-left: 110%;
+    -moz-animation: slideIn 1s 2s forwards;
+    -o-animation: slideIn 1s 2s forwards;
+    -webkit-animation: slideIn 1s 2s forwards;
+    animation: slideIn 1s 2s forwards; }
+    .home-bg-container .home-slider ul {
+      width: 99999999px; }
+    .home-bg-container .home-slider li {
+      display: inline-block;
+      float: left; }
+    .home-bg-container .home-slider img {
+      height: 334px; }
     @media screen and (min-width: 992px) {
-      .home-bg-container .home-bg-2 {
+      .home-bg-container .home-slider {
         height: 334px; } }
 
 .hobbies {
@@ -364,9 +350,91 @@ section {
   .contact-section .contact-bar label {
     color: white;
     font-size: 18px; }
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 768px) {
       .contact-section .contact-bar label {
         font-size: 20px; } }
   .contact-section h1 {
     border-color: white; }
+
+.signature {
+  text-align: center;
+  margin: 0; }
+
+@keyframes bounce {
+  0% {
+    margin-bottom: -400px; }
+  40% {
+    margin-bottom: 0px; }
+  70% {
+    margin-bottom: -30px; }
+  100% {
+    margin-bottom: -10px; } }
+
+@-moz-keyframes slideIn {
+  0% {
+    margin-left: 110%; }
+  100% {
+    margin-left: 0; } }
+
+@-webkit-keyframes slideIn {
+  0% {
+    margin-left: 110%; }
+  100% {
+    margin-left: 0; } }
+
+@keyframes slideIn {
+  0% {
+    margin-left: 110%; }
+  100% {
+    margin-left: 0; } }
+
+@keyframes openUp {
+  0% {
+    height: 0;
+    margin-top: -70px; }
+  45% {
+    margin-top: 150px; }
+  65% {
+    height: 0; }
+  100% {
+    margin-top: 0;
+    height: 348px; } }
+
+/* Container DIV - automatically generated */
+.simply-scroll-container {
+  position: relative; }
+
+/* Clip DIV - automatically generated */
+.simply-scroll-clip {
+  position: relative;
+  overflow: hidden; }
+
+/* UL/OL/DIV - the element that simplyScroll is inited on
+Class name automatically added to element */
+.simply-scroll-list {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.simply-scroll-list li {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.simply-scroll-list li img {
+  border: none;
+  display: block; }
+
+/* Custom class modifications - adds to / overrides above
+
+.simply-scroll is default base class */
+/* Container DIV */
+.simply-scroll {
+  margin-bottom: 1em; }
+
+/* Explicitly set height/width of each list item */
+.simply-scroll .simply-scroll-list li {
+  float: left;
+  /* Horizontal scroll only */ }
 
