@@ -155,6 +155,66 @@ section {
     -o-animation: bounce 1s .5s forwards;
     -webkit-animation: bounce 1s .5s forwards;
     animation: bounce 1s .5s forwards; }
+  .home-section .cv-download {
+    position: absolute;
+    right: 15%;
+    bottom: 20%;
+    background: rgba(1, 1, 1, 0.3);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 3px solid white;
+    color: white;
+    font-size: 20px;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .home-section .cv-download:hover {
+      background: #002a4d; }
+
+.rectangle-speech-border {
+  position: relative;
+  padding: 50px 15px;
+  margin: 1em 0 3em;
+  border: 10px solid white;
+  text-align: center;
+  color: #333;
+  background: #fff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px; }
+  .rectangle-speech-border::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    bottom: -40px;
+    left: 50px;
+    width: 50px;
+    height: 30px;
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: #5a8f00;
+    background: transparent;
+    -webkit-border-bottom-right-radius: 80px 50px;
+    -moz-border-radius-bottomright: 80px 50px;
+    border-bottom-right-radius: 80px 50px;
+    display: block; }
+  .rectangle-speech-border::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    bottom: -40px;
+    left: 50px;
+    width: 20px;
+    height: 30px;
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: #5a8f00;
+    background: transparent;
+    -webkit-border-bottom-right-radius: 40px 50px;
+    -moz-border-radius-bottomright: 40px 50px;
+    border-bottom-right-radius: 40px 50px;
+    display: block; }
 
 .home-bg-container {
   position: absolute;

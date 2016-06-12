@@ -206,6 +206,75 @@ section {
         -webkit-animation: bounce 1s .5s forwards;
         animation: bounce 1s .5s forwards;
     }
+
+    .cv-download {
+        position: absolute;
+        right: 15%;
+        bottom: 20%;
+        background: rgba(1, 1, 1, 0.3);
+        padding: 4px 10px;
+        border-radius: 4px;
+        border: 3px solid white;
+        color: white;
+        font-size: 20px;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+
+        &:hover{
+            background: $blue-dark;
+        }
+    }
+}
+
+.rectangle-speech-border {
+    position: relative;
+    padding: 50px 15px;
+    margin: 1em 0 3em;
+    border: 10px solid white;
+    text-align: center;
+    color: #333;
+    background: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        bottom: -40px;
+        left: 50px;
+        width: 50px;
+        height: 30px;
+        border-style: solid;
+        border-width: 0 10px 10px 0;
+        border-color: #5a8f00;
+        background: transparent;
+        -webkit-border-bottom-right-radius: 80px 50px;
+        -moz-border-radius-bottomright: 80px 50px;
+        border-bottom-right-radius: 80px 50px;
+        display: block;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        bottom: -40px;
+        left: 50px;
+        width: 20px;
+        height: 30px;
+        border-style: solid;
+        border-width: 0 10px 10px 0;
+        border-color: #5a8f00;
+        background: transparent;
+        -webkit-border-bottom-right-radius: 40px 50px;
+        -moz-border-radius-bottomright: 40px 50px;
+        border-bottom-right-radius: 40px 50px;
+        display: block;
+    }
 }
 
 .home-bg-container {
@@ -225,7 +294,7 @@ section {
 
     .home-slider-top-margin {
         height: 0;
-        
+
         @media screen and (min-width: 992px) {
             height: 60px;
         }
@@ -568,34 +637,34 @@ section {
 
 //SIMPLYSCROLL
 /* Container DIV - automatically generated */
-.simply-scroll-container { 
-	position: relative;
+.simply-scroll-container {
+    position: relative;
 }
 
 /* Clip DIV - automatically generated */
-.simply-scroll-clip { 
-	position: relative;
-	overflow: hidden;
+.simply-scroll-clip {
+    position: relative;
+    overflow: hidden;
 }
 
 /* UL/OL/DIV - the element that simplyScroll is inited on
 Class name automatically added to element */
-.simply-scroll-list { 
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.simply-scroll-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-	
+
 .simply-scroll-list li {
-	padding: 0;
-	margin: 0;
-	list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
-	
+
 .simply-scroll-list li img {
-	border: none;
-	display: block;
+    border: none;
+    display: block;
 }
 
 /* Custom class modifications - adds to / overrides above
@@ -603,12 +672,11 @@ Class name automatically added to element */
 .simply-scroll is default base class */
 
 /* Container DIV */
-.simply-scroll { 
-
-	margin-bottom: 1em;
+.simply-scroll {
+    margin-bottom: 1em;
 }
-	
-/* Explicitly set height/width of each list item */	
+
+/* Explicitly set height/width of each list item */
 .simply-scroll .simply-scroll-list li {
-	float: left; /* Horizontal scroll only */
+    float: left; /* Horizontal scroll only */
 }
