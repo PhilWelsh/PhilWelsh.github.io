@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head lang="en">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,7 +16,16 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/webcomponents.js@^0.7.24/webcomponents-lite.min.js"></script>
+    <script src="https://unpkg.com/simpla@^2.0.0"></script>
+    <script>
+        Simpla.init('BkMW1cgkZ');
+    </script>
+    <link rel="import" href="/bower_components/simpla-text/simpla-text.html">
+    <link rel="import" href="/bower_components/simpla-img/simpla-img.html">
+    <link rel="import" href="/bower_components/simpla-admin/simpla-admin.html" async>
 </head>
+
 <body>
     <header class="invert">
         <div class="container">
@@ -48,21 +58,26 @@
             </div>
             <div class="container">
                 <div class="hero"></div>
-                <a class ="cv-download" href="philwelsh-cv.pdf" download>See My CV <i class="fa fa-download fa-lg"></i></a>
+                <a class="cv-download" href="philwelsh-cv.pdf" download>See My CV <i class="fa fa-download fa-lg"></i></a>
             </div>
         </section>
         <section class="about-section">
             <div class="container">
                 <h1>About</h1>
+
+                <simpla-text path="/firstEditableText">EDITABLE TEXT1</simpla-text>
                 <div class="row">
                     <div class="col-md-8">
                         <p>
-                            Hi, I'm <b>Phil Welsh</b>. Welcome to my personal website.<br />
-                            I'm a <b>web developer</b> and all round <b>creative</b> type, born and raised in <b>Newcastle, England</b>. Currently working in <b>Shenzhen, China</b>
-                        <p /><hr /><p>
-                            I studied <b>Creative Digital Media</b> at <b>Teesside University</b>, learning digital <b>design</b> and <b>animation</b> and have spent the following years
-                            developing myself and my skills as a <b>front end Dev</b>
-                            <!--<p>In my spare time i also enjoy</p>-->
+                            Hi, I'm <b>Phil Welsh</b>. Welcome to my personal website.<br /> I'm a <b>web developer</b> and
+                            all round <b>creative</b> type, born and raised in <b>Newcastle, England</b>. Currently working
+                            in <b>Shenzhen, China</b>
+                            <p />
+                            <hr />
+                            <p>
+                                I studied <b>Creative Digital Media</b> at <b>Teesside University</b>, learning digital <b>design</b>                                and <b>animation</b> and have spent the following years developing myself and my skills as
+                                a <b>front end Dev</b>
+                                <!--<p>In my spare time i also enjoy</p>-->
                     </div>
                     <div class="col-md-4">
                         <!--<img />-->
@@ -185,8 +200,11 @@
                 <div class="row">
                     <div class="col-md-8">
                         <p>
-                            During my career i’ve been able to contribute to many different websites. These are professional websites i have worked on during my times at
-                            <a href="http://www.ne-web.com/"><nobr>ne-web.</nobr></a>, <a href="http://lowes.co.uk/">Lowes</a> and <a href="http://www.bedegaming.com/">BedeGaming</a> respectively
+                            During my career i’ve been able to contribute to many different websites. These are professional websites i have worked on
+                            during my times at
+                            <a href="http://www.ne-web.com/">
+                                <nobr>ne-web.</nobr>
+                            </a>, <a href="http://lowes.co.uk/">Lowes</a> and <a href="http://www.bedegaming.com/">BedeGaming</a>                            respectively
                         </p>
                         <div class=" work-list">
                             <hr />
@@ -246,4 +264,5 @@
     <script src="jquery.simplyscroll.min.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
