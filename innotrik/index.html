@@ -133,15 +133,15 @@
                 <img src="group.jpg" alt="innotrik group" />
                 <p>(INNOTRIK team building, spring 2017, photography in Guilin</p>
             </div>
-            <!--<div class="col-sm-5 form">
+                <div class="col-sm-5 form">
                     <h2>Grow your business start from Contact INNOTRIK</h2>
-                    <section id="contactForm" class="contact-form">
-                        <form name="htmlform" method="post" action="toyousender.php">
+                    <section id="contact-form" class="contact-form" >
+                        <form name="htmlform" action="mail.php" method="POST">
                             <div class="row">
                                 <div class="col-xs-6 col-sm-12">
                                     <label>Name</label>
-                                    <input type="text" class="form-control name" name="first_name" placeholder="first name" required>
-                                    <input type="text" class="form-control name" name="last_name" placeholder="surname" required>
+                                    <input type="text" class="form-control name" name="firstname" placeholder="first name" required>
+                                    <input type="text" class="form-control name" name="lastname" placeholder="surname" required>
                                     <label>Work Email</label>
                                     <input type="email" class="form-control" name="email" placeholder="your work email address" required>
                                     <label>Website</label>
@@ -156,8 +156,15 @@
                                     <textarea class="form-control" name="message" placeholder="type a message here" required></textarea>
                                 </div>
                             </div>
+                            <input type="submit" name="submit" value="Submit" id="submit" />
                             <button class="btn center" name="send" type="submit" class="submit">TALK WITH SPECIALIST</button>
                         </form>
+                        <div id='msg_submitting'>
+                            <h2>Submitting ...</h2>
+                        </div>
+                        <div id='msg_submitted'>
+                            <h2>Thank you !<br> The form was submitted Successfully.</h2>
+                        </div>
                     </section>
                 </div>
         --></div>
