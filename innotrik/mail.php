@@ -12,9 +12,12 @@ website: $website,\n
 job: $job,\n
 phone: $phone,\n
 Message: $message";
-$recipient = "phizs@hotmail.com";
+$recipient = "phizs@hotmail.com", "philwelsh3d@gmail.com";
 $subject = "Contact Form";
 $mailheader = "From: $email \r\n";
-mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-echo "Thank You!";
+if(mail($recipient, $subject, $formcontent, $mailheader)){
+        echo "The email($email_subject) was successfully sent.";
+    } else {
+        echo "The email($email_subject) was NOT sent.";
+    }
 ?>
