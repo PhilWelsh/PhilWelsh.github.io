@@ -7,23 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phil Welsh | Web Designer &amp; Developer | Newcastle</title>
     <meta name="description" content="Phil Welsh - Web Designer and Developer, currently based in Newcastle">
+    <!-- fonts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- slick theme -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.6/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick.css">
     <link rel="stylesheet" type="text/css" href="slick-theme.css">
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
+    <!-- my css/other -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script src="https://unpkg.com/webcomponents.js@^0.7.24/webcomponents-lite.min.js"></script>
-    <script src="https://unpkg.com/simpla@^2.0.0"></script>
-    <script>
-        Simpla.init('BkMW1cgkZ');
-    </script>
-    <link rel="import" href="/bower_components/simpla-text/simpla-text.html">
-    <link rel="import" href="/bower_components/simpla-img/simpla-img.html">
-    <link rel="import" href="/bower_components/simpla-admin/simpla-admin.html" async>
+    <!-- tiled gallery (graphic design examples) -->
+    <link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' />
+    <link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css' />
 </head>
 
 <body>
@@ -68,8 +66,7 @@
                     <div class="col-md-8">
                         <p>
                             Hi, I'm <b>Phil Welsh</b>. Welcome to my personal website.<br /> I'm a <b>web developer</b> and
-                            all round <b>creative</b> type, born and raised in <b>Newcastle, England</b>. Currently 
-                            in <b>Toronto, Canada</b>
+                            all round <b>creative</b> type, born and raised in <b>Newcastle, England</b>. Currently in <b>Toronto, Canada</b>
                             <p />
                             <hr />
                             <p>
@@ -220,7 +217,28 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="sidebar"></div>
+                        <div class="sidebar">
+                            <div>
+                                <h2>Graphic design</h2>
+                            </div>
+                            <div class="side-sub">
+                                <p>Examples of illustration and Graphic design work from various jobs or projects</p>
+                                <hr />
+                                <!-- graphic design plugin -->
+                                <div id="gallery" style="display:none;">
+
+                                    <img alt="Image 1 Title" src="img/graphic-design/ala-thumb.jpg" data-image="img/graphic-design/ala.jpg" data-description="Graphic design 1">
+                                    <img alt="Image 2 Title" src="img/graphic-design/hadrian-thumb.jpg" data-image="img/graphic-design/hadrian.jpg" data-description="Graphic design 2">
+                                    <img alt="Image 1 Title" src="img/graphic-design/lucky13-thumb.jpg" data-image="img/graphic-design/lucky13.jpg" data-description="Graphic design 1">
+                                    <img alt="Image 2 Title" src="img/graphic-design/mixnanza-thumb.jpg" data-image="img/graphic-design/mixnanza.jpg" data-description="Graphic design 2">
+                                    <img alt="Image 2 Title" src="img/graphic-design/netvue-thumb.jpg" data-image="img/graphic-design/netvue.jpg" data-description="Graphic design 2">
+                                    <img alt="Image 2 Title" src="img/graphic-design/phil-run-thumb.jpg" data-image="img/graphic-design/phil-run.gif" data-description="Graphic design 2">
+
+                                </div>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -259,7 +277,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.6/slick.min.js"></script>
     <script src="jquery.scrollbox.min.js"></script>
-    <script src="jquery.simplyscroll.min.js"></script>
+    <script src="jquery.simplyscroll.min.js"></script>    
+    <script type='text/javascript' src='unitegallery/js/unitegallery.min.js'></script>
+    <script type='text/javascript' src='unitegallery/themes/default/ug-theme-default.js'></script>
     <script src="main.js"></script>
 </body>
 

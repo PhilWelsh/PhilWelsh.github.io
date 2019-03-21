@@ -47,6 +47,8 @@ $(document).ready(function () {
         $(".skill-title h2").not(skillTitle).animate({ "left": "-400px" }, "slow");
         $(skillTitle).animate({ "left": "0px" }, "slow");
     });
-
+        jQuery("#gallery").unitegallery({
+            slider_scale_mode: "fit"
+        });
 });
 

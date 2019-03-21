@@ -24,11 +24,30 @@ header {
     z-index: 9;
     top: 0;
     width: 100%;
-    background: $black;
+    background: white;
     border-bottom: 1px solid $black;
     -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,1);
     -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,1);
     box-shadow: 0 1px 5px 0 rgba(0,0,0,1);
+
+    // &.invert{
+    //     background: $black;
+    //     border-bottom: 1px solid $black;
+    //     -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,1);
+    //     -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,1);
+    //     box-shadow: 0 1px 5px 0 rgba(0,0,0,1);   
+
+    //     a {
+    //         background: white;
+    //         color: $blue-dark;
+    //         border: 3px solid white;
+
+    //         &:hover {
+    //             background: $blue-dark;
+    //             color: white;
+    //         }
+    //     }
+    // }
 
     .social-media {
         float: right;
@@ -38,10 +57,10 @@ header {
             display: inline-block;
             width: 35px;
             height: 35px;
-            background: white;
-            color: $blue-dark;
+            background: $blue;
+            color: white;
             font-size: 15px;
-            border: 3px solid white;
+            border: 3px solid $blue;
             border-radius: 50%;
             -moz-transition: all .3s;
             -o-transition: all .3s;
@@ -49,8 +68,8 @@ header {
             transition: all .3s;
 
             &:hover {
-                background: $blue-dark;
-                color: white;
+                background: white;
+                color: $blue;
             }
 
             i {
@@ -175,7 +194,7 @@ section {
 }
 
 .side-sub {
-    border-top: 4px solid white;
+    border-top: 4px solid $blue-dark;
 }
 
 .home-section {
@@ -392,6 +411,10 @@ section {
         border-color: white;
     }
 
+    .side-sub{
+        border-top:4px solid white;
+    }
+
     h1 {
         border-color: white;
     }
@@ -487,10 +510,6 @@ section {
             }
         }
     }
-
-    .sidebar {
-        display: none;
-    }
 }
 
 .contact-section {
@@ -507,9 +526,6 @@ section {
     }
 
     .contact-bar {
-        @media screen and (min-width: 768px) {
-            display: inline-block;
-        }
 
         a {
             display: inline-block;
