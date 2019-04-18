@@ -19,10 +19,6 @@ header {
   top: 0;
   width: 100%;
   background: white;
-  border-bottom: 1px solid #000;
-  -webkit-box-shadow: 0 1px 5px 0 black;
-  -moz-box-shadow: 0 1px 5px 0 black;
-  box-shadow: 0 1px 5px 0 black;
 }
 
 header .social-media {
@@ -55,26 +51,26 @@ header .social-media a i {
   margin-left: 7px;
 }
 
-header .svg-logo {
-  float: left;
-  margin: 10px 0;
-}
-
-header .svg-logo path {
-  fill: #004680;
-}
-
-header.invet {
+header.invert {
   background: white;
   color: #004680;
 }
 
-header.invet .svg-logo path {
+header.invert .svg-logo path {
   fill: #004680;
 }
 
-header.invet a {
+header.invert a {
   border-color: #004680;
+}
+
+.svg-logo {
+  float: left;
+  margin: 10px 0;
+}
+
+.svg-logo path {
+  fill: #004680;
 }
 
 body {
@@ -104,14 +100,14 @@ ul {
 
 h1 {
   font-weight: bold;
-  display: inline-block;
-  border-bottom: 5px solid #002a4d;
-  font-size: 40px;
+  display: block;
+  text-align: center;
+  font-size: 30px;
 }
 
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 50px;
+    font-size: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -182,24 +178,25 @@ section {
   border-top: 4px solid #002a4d;
 }
 
-.home-section {
+.jumbo {
   position: relative;
   padding: 0;
   overflow: hidden;
+  background: orange;
 }
 
-.home-section .container {
+.jumbo .container {
   position: relative;
   height: 250px;
 }
 
 @media screen and (min-width: 992px) {
-  .home-section .container {
+  .jumbo .container {
     height: 450px;
   }
 }
 
-.home-section .hero {
+.jumbo .hero {
   position: absolute;
   bottom: 0;
   height: 90%;
@@ -214,15 +211,15 @@ section {
   animation: bounce 1s .5s forwards;
 }
 
-.home-section .cv-download {
+.jumbo .cv-download {
   position: absolute;
   right: 15%;
   bottom: 20%;
-  background: rgba(1, 1, 1, 0.3);
+  background: white;
   padding: 4px 10px;
   border-radius: 4px;
   border: 3px solid white;
-  color: white;
+  color: #002a4d;
   font-size: 20px;
   -moz-transition: all .3s;
   -o-transition: all .3s;
@@ -230,127 +227,44 @@ section {
   transition: all .3s;
 }
 
-.home-section .cv-download:hover {
+.jumbo .cv-download:hover {
   background: #002a4d;
+  color: white;
+  border-color: #002a4d;
 }
 
-.rectangle-speech-border {
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.portfolio-item {
+  height: 180px;
+  width: 180px;
+  background: #004680;
   position: relative;
-  padding: 50px 15px;
-  margin: 1em 0 3em;
-  border: 10px solid white;
-  text-align: center;
-  color: #333;
-  background: #fff;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
 }
 
-.rectangle-speech-border::before {
+.portfolio-item:after {
   content: "";
   position: absolute;
-  z-index: 10;
-  bottom: -40px;
-  left: 50px;
-  width: 50px;
-  height: 30px;
-  border-style: solid;
-  border-width: 0 10px 10px 0;
-  border-color: #5a8f00;
-  background: transparent;
-  -webkit-border-bottom-right-radius: 80px 50px;
-  -moz-border-radius-bottomright: 80px 50px;
-  border-bottom-right-radius: 80px 50px;
   display: block;
-}
-
-.rectangle-speech-border::after {
-  content: "";
-  position: absolute;
-  z-index: 10;
-  bottom: -40px;
-  left: 50px;
-  width: 20px;
-  height: 30px;
-  border-style: solid;
-  border-width: 0 10px 10px 0;
-  border-color: #5a8f00;
-  background: transparent;
-  -webkit-border-bottom-right-radius: 40px 50px;
-  -moz-border-radius-bottomright: 40px 50px;
-  border-bottom-right-radius: 40px 50px;
-  display: block;
-}
-
-.home-bg-container {
-  position: absolute;
+  height: 100%;
   width: 100%;
+  background: orange;
   top: 0;
   left: 0;
+  opacity: 0;
 }
 
-.home-bg-container div {
+.portfolio-item:hover:after {
+  opacity: .8;
+}
+
+.portfolio-item img {
   width: 100%;
-  border-color: #004680;
-}
-
-@media screen and (min-width: 992px) {
-  .home-bg-container div {
-    display: block;
-  }
-}
-
-.home-bg-container .home-slider-top-margin {
-  height: 0;
-}
-
-@media screen and (min-width: 992px) {
-  .home-bg-container .home-slider-top-margin {
-    height: 60px;
-  }
-}
-
-.home-bg-container .home-slider-frame {
-  height: 348px;
-  background-color: white;
-  border-top: 7px solid;
-  border-bottom: 7px solid;
-  height: 0;
-  margin-top: -70px;
-  -moz-animation: openUp 1s 1s forwards;
-  -o-animation: openUp 1s 1s forwards;
-  -webkit-animation: openUp 1s 1s forwards;
-  animation: openUp 1s 1s forwards;
-}
-
-.home-bg-container .home-slider {
-  display: block;
-  overflow: hidden;
-  margin-left: 110%;
-  -moz-animation: slideIn 1s 2s forwards;
-  -o-animation: slideIn 1s 2s forwards;
-  -webkit-animation: slideIn 1s 2s forwards;
-  animation: slideIn 1s 2s forwards;
-}
-
-.home-bg-container .home-slider ul {
-  width: 99999999px;
-}
-
-.home-bg-container .home-slider li {
-  display: inline-block;
-  float: left;
-}
-
-.home-bg-container .home-slider img {
-  height: 334px;
-}
-
-@media screen and (min-width: 992px) {
-  .home-bg-container .home-slider {
-    height: 334px;
-  }
+  height: 100%;
 }
 
 .hobbies {
@@ -371,10 +285,6 @@ section {
   color: #004680;
   padding-top: 3px;
   margin-bottom: 30px;
-}
-
-.about-section, .work-section {
-  background: repeating-linear-gradient(45deg, #FFFFFF, rgba(0, 42, 77, 0.05) 1px, rgba(0, 42, 77, 0.05) 9px, rgba(70, 82, 152, 0) 10px);
 }
 
 .about-skills li a {
