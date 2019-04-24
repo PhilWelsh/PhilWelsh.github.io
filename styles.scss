@@ -108,7 +108,6 @@ ul {
 h1 {
     font-weight: bold;
     display: block;
-    text-align: center;
     font-size: 30px;
 
     @media screen and (min-width: 768px) {
@@ -156,6 +155,8 @@ b {
 hr {
     border-top: 1px solid $blue-dark;
 }
+
+//Main Site Start
 
 section {
     padding: 30px 0;
@@ -205,10 +206,40 @@ section {
         animation: bounce 1s .5s forwards;
     }
 
-    .cv-download {
+    .hero-text{
+        left: 200px;
         position: absolute;
-        right: 15%;
-        bottom: 20%;
+        top: 35px;
+        // padding: 5px;
+        margin-right: 10px;
+        color:white;
+        font-size: 16px;
+        // border: 3px solid white;
+        // border-radius: 15px;
+        // opacity:0;
+
+        //ANIMATION needs tweaking
+        // transition: all 1s;
+        // width:auto;
+        // height:auto;
+        // max-height:0;
+        // max-width:0;
+        // overflow: hidden;
+        // animation: textOpen 3s 1.5s ease-in-out forwards;
+
+        //NEEDS MEDIA QUERIES IMPLEMENTED
+
+        h2{
+            border-top:2px solid white;
+            border-bottom:2px solid white;
+            padding-top:0;
+        }
+    }
+
+    .cv-download {
+        position: absolute;    
+        right: 2%;
+        bottom: 5%;
         background: white;
         padding: 4px 10px;
         border-radius: 4px;
@@ -227,6 +258,8 @@ section {
         }
     }
 }
+
+//Portfolio Section
 
 .portfolio{
     display:flex;
@@ -284,7 +317,7 @@ section {
 }
 
 .about-skills {
-    li a {
+         li a {
         color: white;
         width: 225px;
         display: inline-block;
@@ -497,6 +530,26 @@ section {
     }
 }
 
+@keyframes textOpen {
+    0%{
+        max-width:0;
+        max-height:0;
+        opacity:0;
+    }
+
+    30%{
+        max-width:0;
+        max-height:0;
+        opacity:1;
+    }
+
+    100%{
+        max-width:400px;
+        max-height:100px;
+        opacity:1;
+    }
+}
+
 @-moz-keyframes slideIn {
     0% {
         margin-left: 110%;
@@ -546,50 +599,49 @@ section {
         height: 348px;
     }
 }
+.portfolio-item-trigger{
+    width:100px; height:100px; background:blue; display:inline-block;
+}
+//  owl
 
+.slide-cont {width: 600px; max-width:96%; display: block; margin: 2% auto;}
+.owl-carouse div {width: 100%;}
 
-//SIMPLYSCROLL
-/* Container DIV - automatically generated */
-.simply-scroll-container {
-    position: relative;
+/*SEE END OF THUMBNAIL FUCNTION TO TINKER SIZE OF THUMBS*/
+.owl-carousel .owl-controls .owl-dot {float: left; background-size: cover; margin-top: 10px;}
+
+.owl-dot{display:inline-block;}
+
+#js-slide-cont{
+    padding: 10px;
+    background: white;
 }
 
-/* Clip DIV - automatically generated */
-.simply-scroll-clip {
-    position: relative;
-    overflow: hidden;
+.modal{
+    display:none;
 }
+.show-modal{
+    overflow:hidden;
 
-/* UL/OL/DIV - the element that simplyScroll is inited on
-Class name automatically added to element */
-.simply-scroll-list {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.simply-scroll-list li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.simply-scroll-list li img {
-    border: none;
-    display: block;
-}
-
-/* Custom class modifications - adds to / overrides above
-
-.simply-scroll is default base class */
-
-/* Container DIV */
-.simply-scroll {
-    margin-bottom: 1em;
-}
-
-/* Explicitly set height/width of each list item */
-.simply-scroll .simply-scroll-list li {
-    float: left; /* Horizontal scroll only */
+    .modal{
+        display: block;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,.9);
+        
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+        }
+    }
 }

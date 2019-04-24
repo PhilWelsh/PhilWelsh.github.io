@@ -8,23 +8,32 @@
     <title>Phil Welsh | Web Designer &amp; Developer | Newcastle</title>
     <meta name="description" content="Phil Welsh - Web Designer and Developer, currently based in Newcastle">
     <!-- fonts -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <!-- slick theme -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.6/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick.css">
-    <link rel="stylesheet" type="text/css" href="slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- OWL -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" type="text/css" rel="stylesheet"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css" type="text/css" rel="stylesheet"
+    />
+
     <!-- my css/other -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <!-- tiled gallery (graphic design examples) -->
-    <link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' />
-    <link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css' />
 </head>
 
 <body>
+    <section>
+        <div id="modal" class="modal">
+            <span class="close cursor close-modal">&times;</span>
+            <div id="project-info">
+                <div id="js-slide-cont" class="slide-cont empty">
+                    <div class="owl-carousel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <header class="invert">
         <div class="container">
             <svg version="1.1" class="svg-logo" viewBox="0 0 35.102444 20.457227" height="11mm" width="20mm">
@@ -38,7 +47,6 @@
             <div class="social-media">
                 <a href="mailto:philwelsh3d@gmail.com"><i class="fa fa-envelope"></i></a>
                 <a href="https://uk.linkedin.com/in/welshphil"><i class="fa fa-linkedin"></i></a>
-                <!-- <a target="_blank" href="weixin.jpg"><i class="fa fa-weixin"></i></a> -->
             </div>
         </div>
     </header>
@@ -48,33 +56,59 @@
                 <div class="home-slider-top-margin"></div>
             </div>
             <div class="container">
-                <div class="hero"></div>
+                <div class="hero">
+                    <div class="hero-text">
+                        <h1>Phil Welsh</h1>
+                        <h2>Web & Graphic Design</h2>
+                    </div>
+                </div>
                 <a class="cv-download" href="philwelsh-cv.pdf" download>See My CV <i class="fa fa-download fa-lg"></i></a>
             </div>
         </section>
         <section class="about-section">
+            <!--work examples-->
             <div class="container">
                 <h1>Work</h1>
+                <p>Here are some examples of projects or sites I've been priviliged to work on</p>
                 <div class="portfolio">
-                    <div class ="portfolio-item">
-                        <a href=""></a>
-                        <img src="img/site-logos/logo-card/ne-web.jpg"/>
+                    <a href="#" id="test-1" class="portfolio-item-trigger"></a>
+                    <div id="test-1-contents" style="display:none;">
+                        <div class="images">
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav1-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav2-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav3-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav4-1.png"></div>
+                        </div>
+                        <div class="text">
+                            <h1>Project Name</h1>
+                            <p>Hi this is my project</p>
+                        </div>
                     </div>
-                    <div class ="portfolio-item">
-                        <a href=""></a>
-                        <img src="img/site-logos/logo-card/lowes.jpg"/>
+                    <a href="#" id="test-2" style="width:100px; height:100px; background:blue; display:block;"></a>
+                    <div id="test-1-contents" style="display:none;">
+                        <div class="images">
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav1-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav2-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav3-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav4-1.png"></div>
+                        </div>
+                        <div class="text">
+                            <h1>Project Name</h1>
+                            <p>Hi this is my project</p>
+                        </div>
                     </div>
-                    <div class ="portfolio-item">
-                        <a href=""></a>
-                        <img src="img/site-logos/logo-card/bede.jpg"/>
-                    </div>
-                    <div class ="portfolio-item">
-                        <a href=""></a>
-                        <img src="img/site-logos/logo-card/netvue.jpg"/>
-                    </div>
-                    <div class ="portfolio-item">
-                        <a href=""></a>
-                        <img src="img/site-logos/logo-card/other-work.jpg"/>
+                    <a href="#" id="test-3" style="width:100px; height:100px; background:blue; display:block;"></a>
+                    <div id="test-1-contents" style="display:none;">
+                        <div class="images">
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav1-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav2-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav3-1.png"></div>
+                            <div><img src="http://imew.co.uk/wp-content/uploads/2017/03/cav4-1.png"></div>
+                        </div>
+                        <div class="text">
+                            <h1>Project Name</h1>
+                            <p>Hi this is my project</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,150 +116,17 @@
         <section class="skills-section">
             <div class="container">
                 <h1>Skills</h1>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="about-skills">
-                            <ul class="skills-list">
-                                <li>
-                                    <a id="html">HTML/CSS</a>
-                                    <div class="skill-bar skill-bar-1">
-                                        <div class="fill"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a id="photoshop">Photoshop/Illustrator</a>
-                                    <div class="skill-bar skill-bar-2">
-                                        <div class="fill"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a id="javascript">Javascript</a>
-                                    <div class="skill-bar skill-bar-3">
-                                        <div class="fill"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a id="source">Source Control</a>
-                                    <div class="skill-bar skill-bar-4">
-                                        <div class="fill"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a id="cs">C#</a>
-                                    <div class="skill-bar skill-bar-5">
-                                        <div class="fill"></div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="sidebar">
-                            <div class="skill-title">
-                                <h2 id="otherSkillsTitle" style="left:0;">Other Skills</h2>
-                                <h2 id="htmlTitle" style="left:-400px;">HTML</h2>
-                                <h2 id="photoshopTitle" style="left:-400px;">Photoshop</h2>
-                                <h2 id="javascriptTitle" style="left:-400px;">Javascript</h2>
-                                <h2 id="sourceTitle" style="left:-400px;">Source Control</h2>
-                                <h2 id="csTitle" style="left:-400px;">C#</h2>
-                            </div>
-                            <div class="side-sub">
-                                <div class="skill-info">
-                                    <div class="introInfo" style="top:0;">
-                                        <p>
-                                            To find out more information please select one of the skills on the list
-                                            <!--I have experience working with<br />Balsamiq, Evolus Pencil, Photoshop, Illustrator, LESS, SCSS, CSS3, HTML5, MySQL, GIT Extensions, Bash, C#, .Net MVC5, BackboneJs, Orchard, Umbraco, Visual Studio, Sublime, Gulp, Agile, Scrum, Kanban-->
-                                        </p>
-                                    </div>
-                                    <div id="htmlInfo">
-                                        <p>
-                                            I use semantic markup and clean easily modifiable frameworks, and cross-browser lightweight SASS
-                                        </p>
-                                    </div>
-                                    <div id="photoshopInfo">
-                                        <p>
-                                            Personal interest and degree-level education, from design work to photo manipulation complemented by my artistic training
-                                        </p>
-                                    </div>
-                                    <div id="javascriptInfo">
-                                        <p>
-                                            Make use of Jquery, and other libraries available as well as native JS to accomplish advanced goals
-                                        </p>
-                                    </div>
-                                    <div id="sourceInfo">
-                                        <p>
-                                            Use Git Extensions and Bash to work on team projects
-                                        </p>
-                                    </div>
-                                    <div id="csInfo">
-                                        <p>
-                                            Beginners knowledge of C based language, some experience using C# and razor files
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
         <section class="work-section">
             <div class="container">
-                <h1>My Work</h1>
-                <div class="row">
-                    <div class="col-md-8">
-                        <p>
-                            During my career i’ve been able to contribute to many different websites. These are professional websites i have worked on
-                            during my times at
-                            <a href="http://www.ne-web.com/">
-                                <nobr>ne-web.</nobr>
-                            </a>, <a href="http://lowes.co.uk/">Lowes</a> and <a href="http://www.bedegaming.com/">BedeGaming</a>                            respectively
-                        </p>
-                        <div class=" work-list">
-                            <hr />
-                            <a href="http://www.firstliteled.co.uk/"><img src="img/site-logos/firstlite.png" /></a>
-                            <a href="http://www.hadriantechnology.co.uk/"><img src="img/site-logos/hadrian.png" /></a>
-                            <a href="http://www.tynesideproperties.com/"><img src="img/site-logos/tynesideproperties.jpg" /></a>
-                            <hr />
-                            <a href="http://www.lowes.co.uk/"><img src="img/site-logos/lowes.png" /></a>
-                            <a href="http://www.comparestructuredproducts.com/"><img src="img/site-logos/CSP.png" /></a>
-                            <a href="http://www.structuredproductreview.com/"><img src="img/site-logos/SPR.png" /></a>
-                            <hr />
-                            <a href="http://www.21.co.uk/"><img src="img/site-logos/21.png" /></a>
-                            <a href="http://www.meccabingo.co.uk/"><img src="img/site-logos/mecca.png" /></a>
-                            <a href="http://www.grosvenorcasinos.co.uk/"><img src="img/site-logos/grosvenor.png" /></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="sidebar">
-                            <div>
-                                <h2>Graphic design</h2>
-                            </div>
-                            <div class="side-sub">
-                                <p>Examples of illustration and Graphic design work from various jobs or projects</p>
-                                <hr />
-                                <!-- graphic design plugin -->
-                                <div id="gallery" style="display:none;">
-                                    <img alt="Ala beer festival logo design" src="img/graphic-design/ala-thumb.jpg" data-image="img/graphic-design/ala.jpg" data-description="Ala Beer Festival Logo Design">
-                                    <img alt="Hadrian Website design" src="img/graphic-design/hadrian-thumb.jpg" data-image="img/graphic-design/hadrian.jpg"
-                                        data-description="Hadrian Technology Website Design">
-                                    <img alt="Lucky13 logo design" src="img/graphic-design/lucky13-thumb.jpg" data-image="img/graphic-design/lucky13.jpg" data-description="Lucky13 Logo Design">
-                                    <img alt="mixnanza beer festival poster" src="img/graphic-design/mixnanza-thumb.jpg" data-image="img/graphic-design/mixnanza.jpg"
-                                        data-description="Mixnanza Beer Festival Poster">
-                                    <img alt="netvue graphic design" src="img/graphic-design/netvue-thumb.jpg" data-image="img/graphic-design/netvue.jpg" data-description="Netvue Informatic (CMYK)">
-                                    <img alt="netvue technical flyer" src="img/graphic-design/vuebell-thumb.jpg" data-image="img/graphic-design/vuebell.jpg"
-                                        data-description="Netvue Flyer (CMYK)">
-                                    <img alt="netvue website design" src="img/graphic-design/netvue-sitedesign-thumb.jpg" data-image="img/graphic-design/netvue-sitedesign.jpg"
-                                        data-description="Netvue Website Design">
-                                    <!-- <img alt="character run gif" src="img/graphic-design/phil-run-thumb.jpg" data-image="img/graphic-design/phil-run.gif" data-description="Character Running GIF"> -->
-                                </div>
-                            </div>
-                            <div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <h1>About Me</h1>
+                <p>I'm a digital designer, developer and all around creative. </p>
+                <p>I graduated from university in 2010 with a BA in Creative Digital Multimedia</p>
+                <p>Since then i have been working in Graphic Design, Web Design, Front End Web development, and in marketing
+                    and brand representation</p>
+                <p>I have worked in The UK and China for large international teams and small or start up teams, as well as working
+                    freelance or for contract jobs</p>
             </div>
         </section>
         <section class="contact-section">
@@ -233,7 +134,8 @@
                 <h1>Contact</h1>
                 <div class="row">
                     <div class="col-md-8">
-                        <p>whatever the reason. Always happy to hear from people, feel free to reach me on your preferred method</p>
+                        <p>whatever the reason. Always happy to hear from people, feel free to reach me on your preferred method
+                        </p>
                     </div>
                     <div class="col-md-4">
                         <div class="sidebar">
@@ -247,8 +149,8 @@
                                 <a href="uk.linkedin.com/in/welshphil"><i class="fa fa-linkedin"></i></a><label>linkedin.com/in/welshphil</label>
                             </div>
                             <!-- <div class="contact-bar">
-                                <a target="_blank" href="weixin.jpg"><i class="fa fa-weixin" style="margin-left:4px;"></i></a><label>philomat</label>
-                            </div> -->
+                                    <a target="_blank" href="weixin.jpg"><i class="fa fa-weixin" style="margin-left:4px;"></i></a><label>philomat</label>
+                                </div> -->
                         </div>
                     </div>
                 </div>
@@ -257,37 +159,10 @@
             <p class="signature">PhilWelsh.2019</p>
         </section>
     </div>
-    <script src="jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!--lazyload-->
-    <script src="jquery.simplyscroll.min.js"></script>
-    <!--top slider-->
-    <script src="jquery.scrollbox.min.js"></script>
-    <!--hobbies scroller-->
-    <script type='text/javascript' src='unitegallery/js/unitegallery.min.js'></script>
-    <!--graphic design lightbox-->
-    <script type='text/javascript' src='unitegallery/themes/default/ug-theme-default.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
     <script src="main.js"></script>
-</body>
-
-</html>
-
-<!DOCTYPE html PUBLIC “Digital/Designer/Wanted”>
-
-<html>
-
-<head>
-
-<script src=https://www.annexbusinessemedia.com/careers></script>
-
-<body>
-
-<font=SuperAwesomeVeticaBOLD color=orange> You want to be a Digital Designer (HTML/CSS) at Annex Business Media</font><br>
-
-<font=AmazingVeticaRegularItalics color=grey> Must dream about HTML and CSS in their sleep</font><br>
-
-<font=OneMoreThingVetica color=red><blink> Also, must promise to NEVER use the ‘blink’ tag… ever. <blink></font><br><br>
-
 </body>
 
 </html>

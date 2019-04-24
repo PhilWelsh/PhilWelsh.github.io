@@ -1,54 +1,75 @@
-﻿/// <reference path="jquery.kinetic.min.js" />
-$(document).ready(function () {
+﻿// the following to the end is whats needed for the thumbnails.
+jQuery(document).ready(function () {
 
-    //SLICK SLIDER
+    var recipientDivAll = document.getElementById("project-info");
 
-    //$('.slider').slick({
-    //    speed: 15000,
-    //    autoplay: true,
-    //    autoplaySpeed: 0,
-    //    cssEase: 'linear',
-    //    slidesToShow: 1,
-    //    slidesToScroll: 1,
-    //    variableWidth: true
-    //});
+    jQuery("a").on('click', function () {
+        //SHOW LIGHTBOX
+        jQuery(document.body).addClass('show-modal')
 
-    $(".js-slider").simplyScroll({
-        frameRate: 72, //No of movements per second
-        speed: 1, //No of pixels per frame
-        orientation: 'horizontal', //'horizontal or 'vertical' - not to be confused with device orientation
-        auto: true,
-        autoMode: 'loop', //auto = true, 'loop' or 'bounce',
-        pauseOnHover: false, //autoMode = loop|bounce only
-        pauseOnTouch: false, //" touch device only
-        startOnLoad: false //use this to delay starting of plugin until all page assets have loaded
-    });
+        //POPULATE LIGHTBOX
+        var stuffToPopulate = (this).nextElementSibling.innerHTML; //ALL CONTENT <div><all imgs></div><h1><p>
+        var textToPopulate =  jQuery(stuffToPopulate).nextAll("div.text");
+        var imagesToPopulate = jQuery(stuffToPopulate + ' .images').html();
 
-    //ABOUT HOBBY-SPINNER
-    $('.js-hobby-spinner').scrollbox();
+        jQuery('#js-slide-cont').append(textToPopulate);
+        jQuery('.owl-carousel').append(imagesToPopulate);
 
-    //SKILL BUTTONS
-    var lock = false;   //lock prevents multiple tabs opening
-    var skill = $(".skills-list a")
+        //ACTIVATE OWL CAROUSEL
+        jQuery(".owl-carousel").owlCarousel({
+            items: 1,
+        });
 
-    $(skill).on("click", function () {
-        var skillButtonId = "#" + $(this).attr('id');
-        var skillTextId = skillButtonId + ("Info");
-        var skillTitle = skillButtonId + ("Title");
+        // 1) ASSIGN EACH 'DOT' A NUMBER
+        dotcount = 1;
 
-        $(skill).removeClass("active");
-        $(skillButtonId).addClass("active");
+        jQuery('.owl-dot').each(function () {
+            jQuery(this).addClass('dotnumber' + dotcount);
+            jQuery(this).attr('data-info', dotcount);
+            dotcount = dotcount + 1;
+        });
 
-        //var thisButtonsColor = $("#" + skillButtonId).attr("attr-color");
-        //$(".skills-list").css("border-color", thisButtonsColor);
+        // 2) ASSIGN EACH 'SLIDE' A NUMBER
+        slidecount = 1;
 
-        $(".skill-info div").not(skillTextId).animate({ "top": "-400px" }, "slow");
-        $(skillTextId).animate({ "top": "0px" }, "slow");
-        $(".skill-title h2").not(skillTitle).animate({ "left": "-400px" }, "slow");
-        $(skillTitle).animate({ "left": "0px" }, "slow");
-    });
-    jQuery("#gallery").unitegallery({
-        slider_scale_mode: "fit"
-    });
+        jQuery('.owl-item').not('.cloned').each(function () {
+            jQuery(this).addClass('slidenumber' + slidecount);
+            slidecount = slidecount + 1;
+        });
+
+        // SYNC THE SLIDE NUMBER IMG TO ITS DOT COUNTERPART (E.G SLIDE 1 IMG TO DOT 1 BACKGROUND-IMAGE)
+        jQuery('.owl-dot').each(function () {
+            grab = jQuery(this).data('info');
+
+            slidegrab = jQuery('.slidenumber' + grab + ' img').attr('src');
+            // console.log(slidegrab);
+
+            jQuery(this).css("background-image", "url(" + slidegrab + ")");
+        });
+
+        // THIS FINAL BIT CAN BE REMOVED AND OVERRIDEN WITH YOUR OWN CSS OR FUNCTION, I JUST HAVE IT
+        // TO MAKE IT ALL NEAT 
+        amount = jQuery('.owl-dot').length;
+        gotowidth = 100 / amount;
+
+        jQuery('.owl-dot').css("width", gotowidth + "%");
+        newwidth = jQuery('.owl-dot').width();
+        jQuery('.owl-dot').css("height", newwidth + "px");
+    })
+
+    //WHEN CLOSING LIGHTBOX (X OR OUTSIDE), REMOVE CONTENTS, POSSIBLY END SLIDER
+      
+      // Close the Modal NOT WORKING
+      jQuery('.close-modal').on('click', function(){
+        jQuery('body').removeClass('show-modal');
+        jQuery('#modal').innerHTML = '<span class="close cursor close-modal">&times;</span><div id="project-info"><div id="js-slide-cont" class="slide-cont empty"><div class="owl-carousel"></div></div></div>'
+      });
+
+    //   jQuery('body').on('click', function(e) {
+    //     if((jQuery(e.target).closest('#js-slide-cont').length == 0 ) && (jQuery('body').hasClass('show-modal'))) {
+    //         jQuery('body').removeClass('show-modal')
+    //        /* Hide dropdown here */
+    //     }
+    // });
+
 });
-

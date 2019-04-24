@@ -101,7 +101,6 @@ ul {
 h1 {
   font-weight: bold;
   display: block;
-  text-align: center;
   font-size: 30px;
 }
 
@@ -211,10 +210,25 @@ section {
   animation: bounce 1s .5s forwards;
 }
 
+.jumbo .hero-text {
+  left: 200px;
+  position: absolute;
+  top: 35px;
+  margin-right: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.jumbo .hero-text h2 {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding-top: 0;
+}
+
 .jumbo .cv-download {
   position: absolute;
-  right: 15%;
-  bottom: 20%;
+  right: 2%;
+  bottom: 5%;
   background: white;
   padding: 4px 10px;
   border-radius: 4px;
@@ -499,6 +513,24 @@ section {
   }
 }
 
+@keyframes textOpen {
+  0% {
+    max-width: 0;
+    max-height: 0;
+    opacity: 0;
+  }
+  30% {
+    max-width: 0;
+    max-height: 0;
+    opacity: 1;
+  }
+  100% {
+    max-width: 400px;
+    max-height: 100px;
+    opacity: 1;
+  }
+}
+
 @-moz-keyframes slideIn {
   0% {
     margin-left: 110%;
@@ -543,47 +575,66 @@ section {
   }
 }
 
-/* Container DIV - automatically generated */
-.simply-scroll-container {
-  position: relative;
+.portfolio-item-trigger {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  display: inline-block;
 }
 
-/* Clip DIV - automatically generated */
-.simply-scroll-clip {
-  position: relative;
-  overflow: hidden;
-}
-
-/* UL/OL/DIV - the element that simplyScroll is inited on
-Class name automatically added to element */
-.simply-scroll-list {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.simply-scroll-list li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.simply-scroll-list li img {
-  border: none;
+.slide-cont {
+  width: 600px;
+  max-width: 96%;
   display: block;
+  margin: 2% auto;
 }
 
-/* Custom class modifications - adds to / overrides above
-
-.simply-scroll is default base class */
-/* Container DIV */
-.simply-scroll {
-  margin-bottom: 1em;
+.owl-carouse div {
+  width: 100%;
 }
 
-/* Explicitly set height/width of each list item */
-.simply-scroll .simply-scroll-list li {
+/*SEE END OF THUMBNAIL FUCNTION TO TINKER SIZE OF THUMBS*/
+.owl-carousel .owl-controls .owl-dot {
   float: left;
-  /* Horizontal scroll only */
+  background-size: cover;
+  margin-top: 10px;
+}
+
+.owl-dot {
+  display: inline-block;
+}
+
+#js-slide-cont {
+  padding: 10px;
+  background: white;
+}
+
+.modal {
+  display: none;
+}
+
+.show-modal {
+  overflow: hidden;
+}
+
+.show-modal .modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.show-modal .modal .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
 }
