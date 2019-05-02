@@ -160,6 +160,7 @@ b {
 
 hr {
   border-top: 1px solid #002a4d;
+  width: 100%;
 }
 
 section {
@@ -479,6 +480,9 @@ section {
 
 .work-section .work-list {
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 992x) {
@@ -488,20 +492,27 @@ section {
 }
 
 .work-section .work-list a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   margin: 10px;
   vertical-align: bottom;
+  height: 140px;
+  width: 140px;
+  overflow: hidden;
+  background-color: white;
 }
 
 .work-section .work-list a img {
-  max-height: 90px;
-  max-width: 200px;
+  height: 140px;
+  width: 140px;
+  transition: all .3s;
 }
 
-@media screen and (min-width: 480px) {
-  .work-section .work-list a img {
-    max-width: 250px;
-  }
+.work-section .work-list a:hover img {
+  height: 150px;
+  width: 150px;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
 .contact-section {

@@ -177,6 +177,7 @@ b {
 
 hr {
     border-top: 1px solid $blue-dark;
+    width:100%;
 }
 
 section {
@@ -490,23 +491,35 @@ section {
 .work-section {
     .work-list {
         text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
         @media screen and (min-width: 992x) {
             text-align: left;
         }
 
-        a {
-            display: inline-block;
+        a {    
+            display: flex;
+            align-items: center;
             margin: 10px;
             vertical-align: bottom;
+            height: 140px;
+            width: 140px;
+            overflow: hidden;
+            background-color: white;
 
             img {
-                max-height: 90px;
-                max-width: 200px;
+                height:140px;
+                width:140px;
+                transition: all .3s;
+            }
 
-                @media screen and (min-width: 480px) {
-                    max-width: 250px;
-                }
+            &:hover img{
+                height:150px;
+                width:150px;
+                margin-left:-5px;
+                margin-right:-5px;
             }
         }
     }

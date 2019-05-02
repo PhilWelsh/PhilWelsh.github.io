@@ -48,7 +48,15 @@ $(document).ready(function () {
         $(skillTitle).animate({ "left": "0px" }, "slow");
     });
     jQuery("#gallery").unitegallery({
-        slider_scale_mode: "fit"
+        slider_scale_mode: "fit",
+        slider_enable_arrows: false,
+        theme_enable_text_panel: false,
+        slider_enable_play_button: false,
+        gallery_autoplay:true,
+        gallery_play_interval: 2500,
+        slider_enable_zoom_panel: false,
+        slider_controls_always_on: false,
+        gallery_height:1100
     });
 });
 
