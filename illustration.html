@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phil Welsh | Web Designer &amp; Developer | Newcastle</title>
+    <meta name="description" content="Phil Welsh - Web Designer and Developer, currently based in Newcastle">
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- my css/other -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- tiled gallery (graphic design examples) -->
+    <link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' />
+    <link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css' />
+</head>
+
+<body>
+    <header class="invert">
+        <div class="container">
+            <svg version="1.1" class="svg-logo" viewBox="0 0 35.102444 20.457227" height="11mm" width="20mm">
+                <g transform="matrix(0.0540502,0,0,0.0540502,0.01954177,0.0387906)">
+                    <path id="logo-path-1" d="M 0,0 216.05009,376.74347 332.34019,306.86963 154.55334,0 0,0" />
+                    <path id="logo-path-2" d="M 175.76655,0 281.32749,185.14625 398.0001,116.96095 330.61574,0 Z" />
+                    <path id="logo-path-3" d="m 291.93409,202.31884 100.0051,174.75639 116.16754,-70.2056 -99.50002,-172.23102 z" />
+                    <path id="logo-path-4" d="M 493.03202,0 423.29568,122.16993 502.44292,260.86752 648.2275,0 494.10345,0" />
+                </g>
+            </svg>
+            <div class="social-media">
+                <a href="mailto:philwelsh3d@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="https://uk.linkedin.com/in/welshphil"><i class="fa fa-linkedin"></i></a>
+                <!-- <a target="_blank" href="weixin.jpg"><i class="fa fa-weixin"></i></a> -->
+            </div>
+        </div>
+    </header>
+    <div class="body">
+        <section class="illustration-section current-section">                               
+             <div id="gallery" style="display:none; max-height:50vh; margin:auto;">
+                    
+                    <img alt="Illustration kawaii" src="img/illustration/kawai.jpg" data-image="img/illustration/kawai.jpg" data-description="Illustration">
+                    <img alt="Illustration psyduck" src="img/illustration/psyduck.jpg" data-image="img/illustration/psyduck.jpg" data-description="Illustration">
+                    <img alt="Illustration drink-girl" src="img/illustration/drink-girl.jpg" data-image="img/illustration/drink-girl.jpg" data-description="Illustration">
+                    <img alt="Illustration phil-run" src="img/illustration/phil-run.gif" data-image="img/illustration/phil-run.gif" data-description="Illustration">
+                    <img alt="Illustration panda engineer" src="img/illustration/panda-gif.gif" data-image="img/illustration/panda-gif.gif" data-description="Illustration">
+                    <img alt="Illustration character poses" src="img/illustration/character-poses.jpg" data-image="img/illustration/character-poses.jpg" data-description="Illustration">
+                    <!-- <img alt="character run gif" src="img/graphic-design/phil-run-thumb.jpg" data-image="img/graphic-design/phil-run.gif" data-description="Character Running GIF"> -->
+        </div>
+        <div style="text-align: center;"><h2>For more drawings/illustration check out my instagram <a href="https://www.instagram.com/mintwelsh/?hl=en">@mintwelsh</a></h2></div>
+        </section>
+        <section class="contact-section">
+            <div class="container">
+                <h1>Contact</h1>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>whatever the reason. Always happy to hear from people, feel free to reach me on your preferred method</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="sidebar">
+                            <div class="contact-bar">
+                                <a href="tel:+447472186964"><i class="fa fa-phone"></i></a><label>437 982 2486</label>
+                            </div>
+                            <div class="contact-bar">
+                                <a href="mailto:philwelsh3d@gmail.com"><i class="fa fa-envelope"></i></a><label>philwelsh3d@gmail.com</label>
+                            </div>
+                            <div class="contact-bar">
+                                <a href="uk.linkedin.com/in/welshphil"><i class="fa fa-linkedin"></i></a><label>linkedin.com/in/welshphil</label>
+                            </div>
+                            <!-- <div class="contact-bar">
+                                <a target="_blank" href="weixin.jpg"><i class="fa fa-weixin" style="margin-left:4px;"></i></a><label>philomat</label>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <p class="signature">PhilWelsh.2019</p>
+        </section>
+    </div>
+    <script src="jquery-1.11.3.min.js"></script>
+    <!--graphic design lightbox-->
+    <script type='text/javascript' src='unitegallery/js/unitegallery.min.js'></script>
+    <script type='text/javascript' src='unitegallery/themes/default/ug-theme-default.js'></script>
+    <script>
+    jQuery("#gallery").unitegallery({
+        slider_scale_mode: "fit",
+        slider_enable_arrows: false,
+        theme_enable_text_panel: false,
+        slider_enable_play_button: false,
+        gallery_autoplay:true,
+        gallery_play_interval: 2500,
+        slider_enable_zoom_panel: false,
+        slider_controls_always_on: false,
+        gallery_height:1100
+    });
+    </script>
+</body>
+
+</html>
